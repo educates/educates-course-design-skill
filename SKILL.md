@@ -37,6 +37,22 @@ Create `planning/course-brief.md` with the following sections:
 
 Refer to [Course Brief Reference](resources/course-brief-reference.md) for detailed guidance on each section.
 
+### Create the AI Assistant Instructions File
+
+Create an AI assistant instructions file in the project root so that future AI interactions automatically know the project context and which skills to use. For Claude Code, this file is `CLAUDE.md`; other AI coding agents use different conventions (e.g., `AGENTS.md`).
+
+The instructions file should contain:
+
+- A pointer to `README.md` for the project overview, directory structure, and navigation model
+- A pointer to `planning/course-brief.md` for the full course vision and design principles
+- **Project-specific workshop conventions** established during this step — for example, the workshop naming prefix, which session applications workshops need (terminal, editor, Kubernetes, etc.), the programming language and runtime version, and any other defaults that apply across all workshops in this course
+- **Skill references** — when to invoke each skill:
+  - The **educates-course-design** skill for course planning (topics, workshop breakdowns, per-workshop plans)
+  - The **educates-workshop-authoring** skill for creating actual workshop files (directory structure, YAML, instruction pages)
+- **Design principles** — a brief assertion of the approach chosen in the course brief (e.g., fully guided clickable actions, or a more hands-on approach), with a reference to `planning/course-brief.md` for details
+
+Keep this file focused on AI-specific instructions and project-specific overrides. Do not duplicate content that already exists in `README.md` or `planning/course-brief.md` — reference those files instead.
+
 ## Step 2: Brainstorm and Organize Topics
 
 Working with the user, generate a comprehensive list of topics the course could cover and organize them into the parts defined in the course brief.

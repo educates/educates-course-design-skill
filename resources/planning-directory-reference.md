@@ -8,6 +8,7 @@ All planning documents live in the `planning/` directory at the project root:
 
 ```
 project-root/
+├── CLAUDE.md (or equivalent)          # AI assistant instructions (see Step 1)
 ├── planning/                       # Course design and planning documents
 │   ├── course-brief.md                 # Course vision, scope, and requirements
 │   ├── course-topics.md                # Master list of topics organized by part
@@ -27,6 +28,8 @@ The `planning/` and `workshops/` directories serve distinct purposes:
 
 - **`planning/`** holds the design artefacts produced during course planning. These are consumed by the AI and the course author, not by the Educates platform.
 - **`workshops/`** holds the actual Educates workshop implementations (YAML, instruction pages, exercise files). These are what gets published to the Educates platform.
+
+The AI assistant instructions file (e.g., `CLAUDE.md` for Claude Code) sits at the project root alongside these directories. It provides project-specific overrides and tells the AI which skills to use. See Step 1 in the main skill document for what this file should contain.
 
 ## File Naming Conventions
 
