@@ -43,6 +43,7 @@ Each workshop described below includes:
 
 - **Covers ideas** — which topics from course-topics.md are addressed.
 - **Type** — whether this is a spine (mandatory prerequisite) or elective workshop.
+- **Status** — current workshop status and link to tasks (added once `tasks.md` exists).
 - **Prerequisites** — which workshops must be completed first.
 - **Learning objectives** — what the learner will be able to do after completing it.
 - **Narrative arc** — the progression of the workshop from start to finish.
@@ -62,6 +63,7 @@ Each workshop described below includes:
 
 - **Covers ideas** — which topics are addressed (or a description if no
   topics document exists).
+- **Status** — current workshop status and link to tasks (added once `tasks.md` exists).
 - **Prerequisites** — which workshops must be completed first.
 - **Learning objectives** — what the learner will be able to do after completing it.
 - **Narrative arc** — the progression of the workshop from start to finish.
@@ -101,6 +103,8 @@ Each workshop gets a level-3 heading with a sequential number:
 
 **Detailed plan:** [workshop-plans/lab-workshop-name.md](workshop-plans/lab-workshop-name.md)
 
+**Status:** Needs moderate fixup — [tasks](tasks.md#workshop-1-workshop-title)
+
 **Directory name:** `lab-workshop-name`
 
 **Covers ideas** — Topics N–M from course-topics.md (Topic Title, Topic Title)
@@ -132,6 +136,8 @@ Description of the code that will be needed...
 
 **Detailed plan:** [workshop-plans/lab-workshop-name.md](workshop-plans/lab-workshop-name.md)
 
+**Status:** Needs moderate fixup — [tasks](tasks.md#workshop-1-workshop-title)
+
 **Directory name:** `lab-workshop-name`
 
 **Covers ideas** — Description of what this workshop covers
@@ -155,6 +161,8 @@ Description of the code that will be needed...
 ```
 
 The **Detailed plan** link is added once the per-workshop plan is created (Step 4). Until then, omit it.
+
+The **Status** line is added once `tasks.md` is created and tasks exist for the workshop. Until then, omit it. If a workshop has no outstanding tasks, the Status line can read "Complete" with no link, or be omitted.
 
 ## Classifying Workshops as Spine or Elective
 

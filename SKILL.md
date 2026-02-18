@@ -12,7 +12,7 @@ description: >
 
 This skill guides the design of Educates workshops and courses, from a single workshop idea through to a structured multi-part course. The output is a set of planning documents that serve as blueprints for workshop creation using the educates-workshop-authoring skill.
 
-The workflow progresses through six steps, from establishing requirements down to per-workshop implementation plans. Each step produces a planning document in the `planning/` directory. Steps are typically done in order for a new course, but you can enter at any step when extending an existing course (e.g., jump to Step 3 to plan new workshops, or Step 4 to create a plan for a single workshop). For smaller courses, some steps are simplified or skipped entirely — the workflow adapts based on the course scope established in Step 1.
+The workflow progresses through six steps, from establishing requirements down to per-workshop implementation plans. Each step produces a planning document in the `planning/` directory. A centralized task tracking file (`planning/tasks.md`) captures outstanding work across workshops and is updated throughout the workflow. Steps are typically done in order for a new course, but you can enter at any step when extending an existing course (e.g., jump to Step 3 to plan new workshops, or Step 4 to create a plan for a single workshop). When applying this skill to a project with existing workshops, see [Retrofitting Existing Courses](#retrofitting-existing-courses) for guidance on auditing existing work and bootstrapping planning documents. For smaller courses, some steps are simplified or skipped entirely — the workflow adapts based on the course scope established in Step 1.
 
 ## Step 1: Establish Course Requirements
 
@@ -163,6 +163,20 @@ Each plan follows a standard 8-section structure:
 
 After creating the plan, add the **Detailed plan** link to the workshop's entry in the workshops file (see Step 3).
 
+### Track Known Issues
+
+After creating a workshop plan, if there are known issues, open questions, or areas flagged for future attention, add them as tasks in `planning/tasks.md`. Create the file if it does not yet exist.
+
+Common tasks identified during planning include:
+- Design decisions that need validation during implementation
+- Deliberate gaps noted in Design Notes that need tracking
+- Exercise files or pages noted as potentially needing revision
+- Areas where the plan makes assumptions that should be verified
+
+Add a **Status** line to the workshop's entry in the workshops file and to the plan's Workshop Metadata section, linking to the workshop's section in `tasks.md`.
+
+Refer to [Task Tracking Reference](resources/task-tracking-reference.md) for the file structure, task format, and priority levels.
+
 Refer to [Workshop Plan Reference](resources/workshop-plan-reference.md) for the full structure, and [Plan Authoring Guidelines](resources/plan-authoring-guidelines.md) for conventions on sequential workshop flow, deliberate gaps, elective independence, and other guidelines.
 
 ## Step 5: Implement Workshops
@@ -176,6 +190,14 @@ For each workshop to be implemented:
 4. The authoring skill handles the Educates-specific implementation details (YAML configuration, clickable action syntax, page structure, verification checklists)
 
 The workshop files are created in the `workshops/` directory, separate from the `planning/` directory.
+
+### Update Task Tracking
+
+After implementing a workshop, review the result against the plan and update `planning/tasks.md`:
+
+- Mark pre-existing tasks as complete (`[x]`) if implementation resolved them
+- Add new tasks for any gaps between the plan and the actual implementation (e.g., exercises that were simplified, pages that were deferred, clickable actions that could not be implemented as planned)
+- Update the workshop's **Status** line in the workshops file and plan to reflect the current state
 
 ## Step 6: Verify Consistency
 
@@ -198,10 +220,64 @@ Periodically check for consistency across planning documents and generated works
 - "Detailed plan" links in workshop files point to existing files with correct paths
 - File references between planning documents use current names (no stale references from renames)
 
+**Task tracking consistency** *(if `tasks.md` exists)*:
+- Workshop status values in `tasks.md` are consistent with the actual state of each workshop
+- Status lines in workshop breakdown entries and plan files link to the correct anchors in `tasks.md`
+- Completed tasks (`[x]`) accurately reflect resolved issues
+- No stale tasks remain for issues that have already been fixed
+
 **Growth path** *(focused and standard courses)*:
 - Future expansion suggestions in the workshops file and course brief are still relevant and have not been superseded by workshops that were actually created
 
-Report findings directly in conversation rather than generating report files. Suggest corrections for any issues found.
+### Record Findings as Tasks
+
+Record issues found during verification as tasks in `planning/tasks.md` rather than only reporting them in conversation. This ensures findings are tracked and can be addressed later, especially when returning to a project after a break.
+
+- Add new tasks for each issue found, with appropriate priority levels
+- Update workshop **Status** lines to reflect verification findings
+- Report a summary in conversation, referencing the tasks created
+
+If `planning/tasks.md` does not yet exist, create it when issues are found. If no issues are found, no tasks file is needed.
+
+### Working with Tasks Anytime
+
+The user can ask "what should I work on next?" at any point. When they do, consult `planning/tasks.md` and recommend work based on priority (P1 first), workshop status (worst status first), and sequential dependencies (earlier workshops in a chain first). The user can also add tasks at any time outside the normal workflow steps — add them with an appropriate priority.
+
+## Retrofitting Existing Courses
+
+When applying this skill to a project that already has workshops (in the `workshops/` directory) but lacks planning documents, or has incomplete planning documents, offer to audit the existing workshops and bootstrap the planning artifacts.
+
+### Detecting Existing Work
+
+At the start of a session, if the project has a `workshops/` directory with existing workshop subdirectories, check whether corresponding planning documents exist:
+
+- Are there workshop plan files in `planning/workshop-plans/` for each existing workshop?
+- Is there a workshop breakdown file (`planning/workshops.md` or `planning/part-N-workshops.md`)?
+- Is there a `planning/tasks.md`?
+
+If workshops exist but planning documents are missing or incomplete, proactively offer to review the existing workshops and create the missing planning artifacts, including a tasks file.
+
+### Auditing Existing Workshops
+
+When reviewing existing workshops, assess each one for completeness:
+
+- **Workshop structure**: Does it have a `workshop.yaml`, instruction pages, and exercise files?
+- **Instruction pages**: Are all pages present and substantive, or are some placeholder or missing?
+- **Exercise files**: Do the exercises work with the instruction pages, or are there gaps?
+- **Clickable actions**: Are the actions well-formed and functional?
+- **Narrative flow**: For sequential workshops, does the narrative chain hold?
+
+Based on this assessment, assign each workshop a status value (Mostly complete, Needs moderate fixup, Incomplete, or Significantly incomplete) and populate `planning/tasks.md` with specific issues found. Include source links in each task pointing to the relevant files.
+
+### Factoring Workshop State into Planning
+
+When creating or updating planning documents for a course with existing workshops:
+
+- The workshop breakdown should reflect the actual state of existing workshops, not just the intended design. Include **Status** lines for workshops that have known issues.
+- Per-workshop plans for existing workshops should note what already exists and what needs to change, rather than describing the workshop as if it were being built from scratch.
+- The course brief should acknowledge existing work and frame the planning effort as extending or improving it.
+
+Be mindful that existing workshops may be works-in-progress. The goal is to capture their current state accurately so that task tracking can guide them to completion, not to judge them against a finished standard.
 
 ## Planning Directory Structure
 
@@ -213,6 +289,7 @@ planning/
 ├── course-brief.md             # Step 1: Course vision, scope, and requirements
 ├── course-topics.md            # Step 2: Topics list (optional for focused)
 ├── workshops.md                # Step 3: Workshop breakdown
+├── tasks.md                    # Task tracking (created when issues emerge)
 └── workshop-plans/             # Step 4: Per-workshop detailed plans
     ├── lab-first-workshop.md
     └── ...
@@ -225,6 +302,7 @@ planning/
 ├── course-topics.md            # Step 2: Topics organized by part
 ├── part-1-workshops.md         # Step 3: Part 1 topics mapped to workshops
 ├── part-2-workshops.md         # Step 3: Part 2 (when planned)
+├── tasks.md                    # Task tracking (created when issues emerge)
 └── workshop-plans/             # Step 4: Per-workshop detailed plans
     ├── lab-first-workshop.md
     ├── lab-second-workshop.md
@@ -245,6 +323,7 @@ For detailed guidance on specific topics, see:
 - [Workshop Breakdown Reference](resources/workshop-breakdown-reference.md) — How to map topics into workshops with objectives, prerequisites, and classification
 - [Workshop Plan Reference](resources/workshop-plan-reference.md) — The standard 8-section structure for per-workshop implementation plans
 - [Plan Authoring Guidelines](resources/plan-authoring-guidelines.md) — Conventions for sequential workshop flow, deliberate gaps, elective independence, and other plan-writing guidelines
+- [Task Tracking Reference](resources/task-tracking-reference.md) — Task file structure, status values, priority levels, and lifecycle conventions
 
 ## Skill Version
 

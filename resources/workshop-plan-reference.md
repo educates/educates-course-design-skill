@@ -29,11 +29,14 @@ Basic identification and classification:
 - **Difficulty:** beginner / intermediate / advanced
 - **Type:** spine / elective / standalone
 - **Prerequisites:** Workshop N: Title (or "None" for the first workshop)
+- **Status:** Needs moderate fixup — [tasks](../tasks.md#workshop-title)
 ```
 
 The **name** matches the directory name and the `metadata.name` in the workshop's `resources/workshop.yaml`.
 
 For courses that do not use the spine/elective model, omit the **Type** field or use "standalone."
+
+The **Status** line links to the workshop's section in `tasks.md` using a relative path (`../tasks.md` since plans are in the `workshop-plans/` subdirectory). Add this line once `tasks.md` exists and tasks have been recorded for the workshop. If the workshop has no outstanding tasks, omit the Status line or set it to "Complete."
 
 ### 2. Workshop Configuration
 

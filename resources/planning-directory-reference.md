@@ -15,6 +15,7 @@ project-root/
 │   ├── course-brief.md                 # Course vision, scope, and requirements
 │   ├── course-topics.md                # Topics list (optional for focused courses)
 │   ├── workshops.md                    # Workshop breakdown
+│   ├── tasks.md                        # Task tracking (created when issues emerge)
 │   └── workshop-plans/                 # Per-workshop detailed plans
 │       ├── lab-first-workshop.md
 │       └── ...
@@ -33,6 +34,7 @@ project-root/
 │   ├── course-topics.md                # Topics organized by part
 │   ├── part-1-workshops.md             # Part 1 workshops breakdown
 │   ├── part-2-workshops.md             # Part 2 workshops breakdown (when planned)
+│   ├── tasks.md                        # Task tracking (created when issues emerge)
 │   └── workshop-plans/                 # Per-workshop detailed plans
 │       ├── lab-first-workshop.md
 │       ├── lab-second-workshop.md
@@ -62,6 +64,7 @@ All planning document filenames use **lowercase letters and dashes only**. No up
 | `course-topics.md` | Topics list with selection notes (optional for focused courses) |
 | `workshops.md` | Workshop breakdown (for courses without parts) |
 | `part-N-workshops.md` | Workshop breakdown for part N (for courses with parts, one file per part) |
+| `tasks.md` | Centralized task tracking organized by workshop (created when issues emerge) |
 
 Use either `workshops.md` or `part-N-workshops.md`, not both. Part-level files use a numeric identifier: `part-1-workshops.md`, `part-2-workshops.md`, etc. The number matches the part number used throughout the course.
 
@@ -115,6 +118,32 @@ This workshop covers Topic 3 from course-topics.md.
 The learning objectives are aligned with workshops.md.
 ```
 
+### Workshop breakdown entries linking to task status
+
+Once `tasks.md` exists, each workshop entry in the breakdown file includes a **Status** line linking to the workshop's task section:
+
+```markdown
+### Workshop N: Workshop Title
+
+**Detailed plan:** [workshop-plans/lab-workshop-name.md](workshop-plans/lab-workshop-name.md)
+
+**Status:** Needs moderate fixup — [tasks](tasks.md#workshop-title)
+
+**Directory name:** `lab-workshop-name`
+```
+
+If a workshop has no outstanding tasks, the Status line can read "Complete" with no link, or be omitted.
+
+### Workshop plans linking to task status
+
+Once `tasks.md` exists, each workshop plan includes a **Status** line in the Workshop Metadata section:
+
+```markdown
+- **Status:** Needs moderate fixup — [tasks](../tasks.md#workshop-title)
+```
+
+The relative path uses `../tasks.md` since plan files are in the `workshop-plans/` subdirectory.
+
 ## Document Hierarchy
 
 The planning documents form a hierarchy where each level feeds the next:
@@ -125,3 +154,5 @@ The planning documents form a hierarchy where each level feeds the next:
 4. **Workshop plans** (`workshop-plans/lab-*.md`) — Detailed implementation blueprints for each workshop. Derived from the workshop breakdown file.
 
 Each level adds specificity. The course brief is high-level and stable; workshop plans are detailed and may evolve as implementation reveals refinements. For focused courses, the hierarchy may be shortened: brief → workshop breakdown → plans.
+
+**Cross-cutting: Task tracking** (`tasks.md`) — Tracks outstanding work across all workshops. Unlike the hierarchy above, `tasks.md` is not a step in the sequence — it is populated and updated across Steps 4, 5, and 6 as issues are discovered and resolved. See [Task Tracking Reference](task-tracking-reference.md) for details.

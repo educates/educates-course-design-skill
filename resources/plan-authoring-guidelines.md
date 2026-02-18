@@ -107,3 +107,4 @@ Before considering a plan complete, verify:
 - [ ] The overview page connects to prior workshops without re-teaching (if a prior workshop exists)
 - [ ] If a next workshop is planned: the summary page bridges to it with specific hooks
 - [ ] For standalone or final workshops: the summary page includes learning recap and suggestions for further exploration
+- [ ] If known issues or open questions were identified during plan writing, they are recorded as tasks in `tasks.md`

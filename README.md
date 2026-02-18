@@ -9,6 +9,8 @@ A Claude Code skill for designing workshops and courses for the [Educates](https
 - Organize topics into workshops with optional parts and spine/elective classification
 - Create detailed workshop plans that serve as blueprints for the educates-workshop-authoring skill
 - Built-in growth path guidance for expanding courses over time
+- Centralized task tracking across workshops with priority-based work recommendations
+- Retrofitting support for existing courses — audit workshops and bootstrap planning documents
 - Maintain consistency across planning documents with built-in verification guidance
 
 ## Relationship to educates-workshop-authoring
