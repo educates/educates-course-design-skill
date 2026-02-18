@@ -13,7 +13,7 @@ Plan files are named to match the workshop directory name with a `.md` extension
 
 ## Standard Structure
 
-Every plan file follows the same 8-section structure. All sections are required, though the "Connection to Previous Workshop" section is only substantive for spine workshops.
+Every plan file follows the same 8-section structure. All sections are required, though some adapt based on the course scope and the workshop's position in the course (see notes on individual sections below).
 
 ### 1. Workshop Metadata
 
@@ -27,11 +27,13 @@ Basic identification and classification:
 - **Description:** One to two sentence description of what the workshop covers.
 - **Duration:** 15m / 30m / 45m / 1h (estimated completion time)
 - **Difficulty:** beginner / intermediate / advanced
-- **Type:** spine / elective
+- **Type:** spine / elective / standalone
 - **Prerequisites:** Workshop N: Title (or "None" for the first workshop)
 ```
 
 The **name** matches the directory name and the `metadata.name` in the workshop's `resources/workshop.yaml`.
+
+For courses that do not use the spine/elective model, omit the **Type** field or use "standalone."
 
 ### 2. Workshop Configuration
 
@@ -61,11 +63,13 @@ After completing this workshop, the learner will be able to:
 - Objective 3
 ```
 
-These are copied from the part-level workshops file (the source of truth). They may be refined in wording but should stay aligned in substance.
+These are copied from the workshop breakdown file (the source of truth). They may be refined in wording but should stay aligned in substance.
 
 ### 4. Connection to Previous Workshop
 
-For **spine workshops**, explicitly state what the learner already knows and what is new:
+This section is substantive for any workshop that has a predecessor in a sequential chain (spine workshops, or any workshop in a linear course that follows another). For **standalone workshops or the first workshop in a course**, this section can be omitted or replaced with a brief "Assumed Knowledge" note listing what background the learner is expected to have.
+
+For **workshops with a predecessor**, explicitly state what the learner already knows and what is new:
 
 ```markdown
 ## Connection to Previous Workshop
@@ -83,7 +87,7 @@ For **spine workshops**, explicitly state what the learner already knows and wha
 - Do not repeat the X exercise pattern from the previous workshop
 ```
 
-This section prevents unnecessary overlap between sequential spine workshops. It forces the plan author to be explicit about what is assumed knowledge versus new material.
+This section prevents unnecessary overlap between sequential workshops. It forces the plan author to be explicit about what is assumed knowledge versus new material.
 
 For **elective workshops**, this section is briefer — state which spine prerequisites are assumed and what specific concepts from them are relevant.
 
@@ -146,14 +150,16 @@ A page-by-page breakdown of the workshop content:
 ...
 
 ### 99-workshop-summary.md
-**Purpose:** Recap and bridge to the next workshop(s).
+**Purpose:** Recap and bridge forward.
 
 **Content outline:**
 - Summarise the key concepts covered: [list].
-- Note what was deliberately left unaddressed (to create motivation for the
-  next workshop): [specific limitation or unanswered question].
-- For spine workshops: bridge to the next workshop by name and topic.
+- If a next workshop is planned: note what was deliberately left unaddressed
+  (to create motivation for the next workshop) and bridge to it by name
+  and topic.
 - For elective workshops: suggest related workshops the learner might try next.
+- For standalone or final workshops: summarise what was learned and suggest
+  what the learner could explore next or what future workshops might cover.
 ```
 
 For each page, specify:
@@ -205,7 +211,8 @@ Design decisions, rationale, and forward-looking notes:
 ```
 
 Record:
-- Which topics from the master list this workshop covers
+- Which topics from the topics document this workshop covers
 - Why specific design decisions were made
-- Limitations deliberately introduced that future workshops will resolve
+- Limitations deliberately introduced that future workshops will resolve (if future workshops are planned)
 - Concepts that future workshops will build on (so they are introduced clearly)
+- For focused courses: expansion ideas — what future workshops could build on the patterns established here

@@ -1,12 +1,14 @@
 # Educates Course Design Skill
 
-A Claude Code skill for designing multi-workshop courses for the [Educates](https://educates.dev/) interactive training platform.
+A Claude Code skill for designing workshops and courses for the [Educates](https://educates.dev/) interactive training platform.
 
 ## Features
 
-- Design course structure from initial vision through to per-workshop implementation plans
-- Organize topics into logical parts with spine/elective workshop classification
+- Flexible course scope — from a single workshop idea through to structured multi-part courses
+- Scope-adaptive workflow that simplifies steps for smaller courses and supports incremental development
+- Organize topics into workshops with optional parts and spine/elective classification
 - Create detailed workshop plans that serve as blueprints for the educates-workshop-authoring skill
+- Built-in growth path guidance for expanding courses over time
 - Maintain consistency across planning documents with built-in verification guidance
 
 ## Relationship to educates-workshop-authoring

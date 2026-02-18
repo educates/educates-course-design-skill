@@ -2,24 +2,28 @@
 
 These guidelines apply when writing per-workshop plan files (`planning/workshop-plans/lab-*.md`). They ensure consistency across plans and maintain the narrative flow that makes the course cohesive.
 
-## Spine Workshop Flow
+## Sequential Workshop Flow
+
+*The following guidelines apply to courses with sequential workshop chains — spine workshops in courses using the spine/elective model, or workshops in a linear sequence. For standalone workshops (or the only workshop in a focused course), these guidelines do not apply.*
 
 ### Read Before Writing
 
-Always read the plan for the **immediately preceding spine workshop** before writing a new spine workshop plan. Also read the part-level descriptions for both workshops in `part-N-workshops.md`. This ensures the new workshop flows logically from the previous one.
+Always read the plan for the **immediately preceding workshop in the sequence** before writing a new plan. Also read the workshop breakdown descriptions for both workshops. This ensures the new workshop flows logically from the previous one.
 
 ### Continuous Narrative
 
-Spine workshops must flow into each other as a continuous narrative:
+Sequential workshops must flow into each other as a continuous narrative:
 
 - The **summary page** of workshop N should bridge to workshop N+1 by noting limitations, unanswered questions, or capabilities that the next workshop will introduce.
 - The **overview page** of workshop N+1 should pick up exactly where N left off, referencing what was learned but not re-teaching it.
 
 This creates a sense of progression — each workshop ends with a reason to continue, and the next workshop begins by fulfilling that promise.
 
+For **focused courses with only one or two workshops**, the summary page should suggest future directions or areas for further exploration rather than bridge to a specific next workshop (unless one is planned).
+
 ### Identify What NOT to Teach
 
-For each spine workshop, explicitly list concepts the learner already knows from prerequisites. These should be:
+For each workshop with a predecessor, explicitly list concepts the learner already knows from prerequisites. These should be:
 
 - **Referenced briefly** — "as you saw in the previous workshop" or "recall that we used X to achieve Y"
 - **Not re-explained** — do not re-teach the concept, re-derive it, or re-run the same demonstrations
@@ -35,13 +39,17 @@ If a concept will be covered in a later workshop, note the limitation briefly in
 
 Record these deliberate gaps in the Design Notes section of the plan, so the future workshop plan knows to pick them up.
 
+If no later workshop is currently planned (e.g., in a focused course), note the limitation as an "area for future exploration" rather than a deliberate setup. This helps guide future expansion if the user returns to add workshops.
+
 ## Elective Workshop Independence
+
+*This section applies to courses using the spine/elective navigation model.*
 
 Elective workshops share a common set of spine prerequisites but are **independent of each other**:
 
 - Do not assume any other elective has been completed
 - Do not reference code, patterns, or concepts introduced in another elective
-- Only reference spine prerequisites listed in `part-N-workshops.md`
+- Only reference spine prerequisites listed in the workshop breakdown file
 
 This ensures learners can take electives in any order without encountering unexplained concepts.
 
@@ -89,12 +97,13 @@ Consistency in command patterns across workshops helps learners develop familiar
 
 Before considering a plan complete, verify:
 
-- [ ] All 8 sections are present and substantive
-- [ ] Learning objectives match the part-level file
-- [ ] Connection to Previous Workshop explicitly lists what is and is not new (spine workshops)
+- [ ] All 8 sections are present and substantive (Section 4 may be omitted for standalone or first workshops)
+- [ ] Learning objectives match the workshop breakdown file
+- [ ] Connection to Previous Workshop explicitly lists what is and is not new (for workshops with a predecessor)
 - [ ] Every exercise file is described with filename, purpose, and initial contents
 - [ ] Every instruction page has a content outline with specific clickable action types
 - [ ] Terminal working directory is tracked from start to finish
-- [ ] Design notes document deliberate limitations and setups for future workshops
-- [ ] The overview page connects to prior workshops without re-teaching
-- [ ] The summary page bridges to the next workshop(s) with specific hooks
+- [ ] Design notes document deliberate limitations and setups for future workshops (or expansion ideas for focused courses)
+- [ ] The overview page connects to prior workshops without re-teaching (if a prior workshop exists)
+- [ ] If a next workshop is planned: the summary page bridges to it with specific hooks
+- [ ] For standalone or final workshops: the summary page includes learning recap and suggestions for further exploration
