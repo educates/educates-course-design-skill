@@ -2,6 +2,8 @@
 
 A per-workshop plan (`planning/workshop-plans/lab-*.md`) is a detailed implementation blueprint for a single Educates workshop. It contains everything needed to create the actual workshop files using the educates-workshop-authoring skill.
 
+**Important:** Writing a good plan requires knowledge of Educates workshop authoring — the available clickable action types, YAML configuration options, page structure conventions, and exercise file layout. Before writing plans, ensure the educates-workshop-authoring skill has been invoked to load this knowledge (see Step 4 in the main skill document). The goal is implementation-ready plans, not plans that need to be reworked during authoring.
+
 ## File Naming
 
 Plan files are named to match the workshop directory name with a `.md` extension:

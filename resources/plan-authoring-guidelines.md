@@ -71,7 +71,7 @@ If the course uses the guided approach, plans should specify which clickable act
 - **Running code:** `terminal:execute`
 - **Modifying code:** `editor:replace-matching-text`, `editor:append-lines-to-file`, `editor:append-lines-after-match`, `editor:create-file`, etc.
 
-Note the action types inline in the content outline of each page so the workshop implementation uses the right actions.
+Note the action types inline in the content outline of each page so the workshop implementation uses the right actions. The list above covers the most common actions, but the educates-workshop-authoring skill defines the full set of available actions, their exact syntax, and their behavioral nuances. Consult the authoring skill's knowledge when choosing actions for a plan to ensure the planned actions are realistic and correctly specified.
 
 If the course uses a less guided approach (where learners type commands or write code themselves), the plan should still document what actions the learner will perform on each page, but may use prose instructions or `workshop:copy` actions instead of direct clickable actions.
 

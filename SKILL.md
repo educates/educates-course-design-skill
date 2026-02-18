@@ -48,7 +48,7 @@ The instructions file should contain:
 - **Project-specific workshop conventions** established during this step — for example, the workshop naming prefix, which session applications workshops need (terminal, editor, Kubernetes, etc.), the programming language and runtime version, and any other defaults that apply across all workshops in this course
 - **Skill references** — when to invoke each skill:
   - The **educates-course-design** skill for course planning (topics, workshop breakdowns, per-workshop plans)
-  - The **educates-workshop-authoring** skill for creating actual workshop files (directory structure, YAML, instruction pages)
+  - The **educates-workshop-authoring** skill for workshop-authoring knowledge (used both when writing per-workshop plans and when creating actual workshop files)
 - **Design principles** — a brief assertion of the approach chosen in the course brief (e.g., fully guided clickable actions, or a more hands-on approach), with a reference to `planning/course-brief.md` for details
 
 Keep this file focused on AI-specific instructions and project-specific overrides. Do not duplicate content that already exists in `README.md` or `planning/course-brief.md` — reference those files instead.
@@ -112,6 +112,8 @@ Refer to [Part Workshops Reference](resources/part-workshops-reference.md) for d
 For each workshop defined in Step 3, create a detailed implementation plan that serves as the blueprint for workshop creation.
 
 ### Before Writing a Plan
+
+**Load workshop-authoring knowledge**: Before writing the first plan in a session, invoke the **educates-workshop-authoring** skill to load its knowledge of Educates workshop structure. This does not mean creating workshop files — it means having the authoring skill's knowledge available so plans use correct clickable action types, realistic YAML configuration options, proper page structure conventions, and accurate exercise file layouts. The authoring skill's knowledge ensures plans are implementation-ready rather than aspirational.
 
 For **spine workshops**: always read the plan for the immediately preceding spine workshop (and the part-level descriptions for both workshops) before writing the new plan. This ensures continuity and prevents unnecessary overlap.
 
