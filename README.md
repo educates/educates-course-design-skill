@@ -1,6 +1,6 @@
 # Educates Course Design Skill
 
-A Claude Code skill for designing workshops and courses for the [Educates](https://educates.dev/) interactive training platform.
+A Claude Code skill for designing and planning courses for the [Educates](https://educates.dev/) interactive training platform.
 
 ## Features
 

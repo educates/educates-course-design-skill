@@ -1,16 +1,18 @@
 ---
 name: educates-course-design
 description: >
-  Guide for designing workshops and courses for the Educates interactive
-  training platform. Handles everything from planning a single workshop
-  through to designing structured multi-part courses. Use this skill when
-  planning new workshops, designing a course, extending an existing course,
-  or creating detailed workshop plans.
+  Guide for designing and planning Educates courses, which are structured
+  collections of workshops for the Educates interactive training platform.
+  Use this skill when the user asks to design a course, plan a course,
+  extend an existing course, or organize topics into a multi-workshop
+  curriculum. Do NOT use this skill when the user only wants to create a
+  single standalone workshop; use the educates-workshop-authoring skill
+  for that instead.
 ---
 
 # Educates Course Design Skill
 
-This skill guides the design of Educates workshops and courses, from a single workshop idea through to a structured multi-part course. The output is a set of planning documents that serve as blueprints for workshop creation using the educates-workshop-authoring skill.
+This skill guides the design of Educates courses, which are structured collections of workshops, from initial requirements through to detailed per-workshop implementation plans. The output is a set of planning documents that serve as blueprints for workshop creation using the educates-workshop-authoring skill.
 
 The workflow progresses through six steps, from establishing requirements down to per-workshop implementation plans. Each step produces a planning document in the `planning/` directory. A centralized task tracking file (`planning/tasks.md`) captures outstanding work across workshops and is updated throughout the workflow. Steps are typically done in order for a new course, but you can enter at any step when extending an existing course (e.g., jump to Step 3 to plan new workshops, or Step 4 to create a plan for a single workshop). When applying this skill to a project with existing workshops, see [Retrofitting Existing Courses](#retrofitting-existing-courses) for guidance on auditing existing work and bootstrapping planning documents. For smaller courses, some steps are simplified or skipped entirely — the workflow adapts based on the course scope established in Step 1.
 
