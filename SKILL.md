@@ -62,6 +62,7 @@ The instructions file should contain:
 
 - A pointer to `README.md` for the project overview, directory structure, and navigation model
 - A pointer to `planning/course-brief.md` for the full course vision and design principles
+- A pointer to `planning/resources.md` as the curated list of external documentation and references for the course — the agent should consult this file before searching the web for course subject information
 - **Project-specific workshop conventions** established during this step — for example, the workshop naming prefix, which session applications workshops need (terminal, editor, Kubernetes, etc.), the programming language and runtime version, and any other defaults that apply across all workshops in this course
 - **Skill references** — when to invoke each skill:
   - The **educates-course-design** skill for course planning (topics, workshop breakdowns, per-workshop plans)
@@ -69,6 +70,18 @@ The instructions file should contain:
 - **Design principles** — a brief assertion of the approach chosen in the course brief (e.g., fully guided clickable actions, or a more hands-on approach), with a reference to `planning/course-brief.md` for details
 
 Keep this file focused on AI-specific instructions and project-specific overrides. Do not duplicate content that already exists in `README.md` or `planning/course-brief.md` — reference those files instead.
+
+### Start the Course Resources File
+
+Create `planning/resources.md` to track external documentation, references, and learning materials discovered during course design. This file serves as a persistent, curated registry that survives across sessions — when conversation context is cleared and work resumes later, the agent can consult this file instead of re-searching for the same resources.
+
+During requirements gathering, you will often research the course subject to understand its scope and assess feasibility. **Any time a web search or web fetch yields a useful resource — documentation pages, tutorials, API references, guides — add it to this file immediately.** Do not rely on the information staying in conversation context; record it in the file so it is available in future sessions.
+
+Start the file with whatever resources are found during Step 1. It will grow throughout the workflow as more resources are discovered during topic brainstorming (Step 2), workshop breakdown (Step 3), and detailed planning (Step 4).
+
+The course author can review and edit this file at any time to correct versions, flag outdated material, or add preferred alternatives. A curation notes section at the end of the file captures these corrections.
+
+Refer to [Course Resources Reference](resources/course-resources-reference.md) for the file structure, entry format, and maintenance conventions.
 
 ## Step 2: Brainstorm and Organize Topics
 
@@ -79,6 +92,8 @@ This step adapts to the course scope:
 - **Comprehensive**: Generate a thorough inventory of topics the course could cover and organize them into the parts defined in the course brief. The goal is completeness — it is better to list more topics and prune later.
 
 This step is collaborative and iterative — the AI proposes topics based on the course vision and the user refines, adds, removes, and reorders them. The topic list is an inventory, not a 1:1 mapping to workshops. That mapping happens in Step 3.
+
+During topic brainstorming, you will often research external documentation to understand what topics exist, how they work, and what would make good hands-on exercises. Add any useful resources discovered to `planning/resources.md`, annotating entries with the topic numbers they relate to.
 
 ### Create the Topics Document
 
@@ -142,6 +157,8 @@ For each workshop defined in Step 3, create a detailed implementation plan that 
 
 **Load workshop-authoring knowledge**: Before writing the first plan in a session, invoke the **educates-workshop-authoring** skill to load its knowledge of Educates workshop structure. This does not mean creating workshop files — it means having the authoring skill's knowledge available so plans use correct clickable action types, realistic YAML configuration options, proper page structure conventions, and accurate exercise file layouts. The authoring skill's knowledge ensures plans are implementation-ready rather than aspirational.
 
+**Consult the course resources**: Read `planning/resources.md` for external documentation and references relevant to the workshop's subject matter. Use listed resources directly rather than re-searching the web for information that was already found during earlier design steps. If you discover additional resources while writing a plan, add them to the file immediately, annotated with the workshop name they relate to. Check the curation notes section for any version corrections or preferred alternatives the course author has noted.
+
 For **workshops with a predecessor in a sequential chain** (spine workshops, or any workshop in a linear sequence that follows another): always read the plan for the immediately preceding workshop (and the workshop breakdown descriptions for both workshops) before writing the new plan. This ensures continuity and prevents unnecessary overlap.
 
 For **elective workshops**: read the spine prerequisites listed in the workshops file but do not assume any other elective has been completed.
@@ -184,6 +201,8 @@ Refer to [Workshop Plan Reference](resources/workshop-plan-reference.md) for the
 ## Step 5: Implement Workshops
 
 Once a per-workshop plan exists, hand off to the **educates-workshop-authoring** skill to create the actual workshop files.
+
+Before starting implementation, read `planning/resources.md` for external documentation and references curated during the design phase. These resources have been gathered and vetted across earlier steps — consult them first rather than searching the web from scratch. Check the curation notes section for version corrections or preferred alternatives the course author has noted. If you discover new resources during implementation, add them to the file.
 
 For each workshop to be implemented:
 1. Read the per-workshop plan from `planning/workshop-plans/`
@@ -308,6 +327,7 @@ All planning documents live in the `planning/` directory at the project root. Th
 ```
 planning/
 ├── course-brief.md             # Step 1: Course vision, scope, and requirements
+├── resources.md                # Step 1: External references and documentation
 ├── course-topics.md            # Step 2: Topics list (optional for focused)
 ├── workshops.md                # Step 3: Workshop breakdown
 ├── tasks.md                    # Task tracking (created when issues emerge)
@@ -320,6 +340,7 @@ planning/
 ```
 planning/
 ├── course-brief.md             # Step 1: Course vision, scope, and requirements
+├── resources.md                # Step 1: External references and documentation
 ├── course-topics.md            # Step 2: Topics organized by part
 ├── part-1-workshops.md         # Step 3: Part 1 topics mapped to workshops
 ├── part-2-workshops.md         # Step 3: Part 2 (when planned)
@@ -340,6 +361,7 @@ For detailed guidance on specific topics, see:
 
 - [Planning Directory Reference](resources/planning-directory-reference.md) — Directory structure, file naming conventions, and cross-reference linking patterns
 - [Course Brief Reference](resources/course-brief-reference.md) — What goes in a course brief and guidance for each section
+- [Course Resources Reference](resources/course-resources-reference.md) — How to track external documentation and references discovered during course design
 - [Course Topics Reference](resources/course-topics-reference.md) — How to brainstorm, organize, and annotate topics
 - [Workshop Breakdown Reference](resources/workshop-breakdown-reference.md) — How to map topics into workshops with objectives, prerequisites, and classification
 - [Workshop Plan Reference](resources/workshop-plan-reference.md) — The standard 8-section structure for per-workshop implementation plans

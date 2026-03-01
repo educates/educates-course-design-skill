@@ -13,6 +13,7 @@ project-root/
 ├── CLAUDE.md (or equivalent)          # AI assistant instructions (see Step 1)
 ├── planning/                       # Course design and planning documents
 │   ├── course-brief.md                 # Course vision, scope, and requirements
+│   ├── resources.md                    # External references and documentation
 │   ├── course-topics.md                # Topics list (optional for focused courses)
 │   ├── workshops.md                    # Workshop breakdown
 │   ├── tasks.md                        # Task tracking (created when issues emerge)
@@ -31,6 +32,7 @@ project-root/
 ├── CLAUDE.md (or equivalent)          # AI assistant instructions (see Step 1)
 ├── planning/                       # Course design and planning documents
 │   ├── course-brief.md                 # Course vision, scope, and requirements
+│   ├── resources.md                    # External references and documentation
 │   ├── course-topics.md                # Topics organized by part
 │   ├── part-1-workshops.md             # Part 1 workshops breakdown
 │   ├── part-2-workshops.md             # Part 2 workshops breakdown (when planned)
@@ -61,6 +63,7 @@ All planning document filenames use **lowercase letters and dashes only**. No up
 | File | Purpose |
 |---|---|
 | `course-brief.md` | Course vision, scope, audience, design principles, and growth path |
+| `resources.md` | External documentation, references, and learning materials (created in Step 1, updated throughout) |
 | `course-topics.md` | Topics list with selection notes (optional for focused courses) |
 | `workshops.md` | Workshop breakdown (for courses without parts) |
 | `part-N-workshops.md` | Workshop breakdown for part N (for courses with parts, one file per part) |
@@ -154,5 +157,7 @@ The planning documents form a hierarchy where each level feeds the next:
 4. **Workshop plans** (`workshop-plans/lab-*.md`) — Detailed implementation blueprints for each workshop. Derived from the workshop breakdown file.
 
 Each level adds specificity. The course brief is high-level and stable; workshop plans are detailed and may evolve as implementation reveals refinements. For focused courses, the hierarchy may be shortened: brief → workshop breakdown → plans.
+
+**Cross-cutting: Course resources** (`resources.md`) — A curated registry of external documentation, references, and learning materials discovered during course design. Created in Step 1 and updated throughout the workflow as new resources are found. Unlike the hierarchy above, `resources.md` is not tied to a single step — it accumulates resources across all steps and persists across sessions. See [Course Resources Reference](course-resources-reference.md) for details.
 
 **Cross-cutting: Task tracking** (`tasks.md`) — Tracks outstanding work across all workshops. Unlike the hierarchy above, `tasks.md` is not a step in the sequence — it is populated and updated across Steps 4, 5, and 6 as issues are discovered and resolved. See [Task Tracking Reference](task-tracking-reference.md) for details.
