@@ -101,6 +101,17 @@ Include a source link when the task relates to a specific file. The link uses a 
 - Start with an action verb: "Fix", "Add", "Update", "Remove", "Rewrite"
 - Be specific about the location: reference the page filename, exercise file, or section name
 - Include enough context that someone returning to the project after a break can understand the task without reading the full plan
+- When a task stems from an external discovery (e.g., an upstream library behaving differently than documented), add indented sub-bullets capturing the investigation context:
+
+  ```
+  - [ ] **P2** — Revisit decorator exercise to use `functools.wraps` once upstream fix lands. ([source](../workshops/lab-decorators/workshop/content/04-wraps.md))
+    - **Tried:** Calling `functools.wraps` with a class-based decorator per the docs
+    - **Failed because:** `update_wrapper` raises `AttributeError` on `__wrapped__` when the decorator is a class (library v2.3.1)
+    - **Workaround applied:** Used a function-based decorator instead; updated page 04 narrative to match
+    - **Upstream:** https://github.com/example/library/issues/1234
+  ```
+
+  The sub-bullets make the task self-contained — someone can understand what happened, reproduce the issue, check whether an upstream fix has landed, and revert the workaround without re-investigating from scratch.
 
 ## Cross-Referencing
 

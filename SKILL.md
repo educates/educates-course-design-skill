@@ -199,7 +199,22 @@ After implementing a workshop, review the result against the plan and update `pl
 
 - Mark pre-existing tasks as complete (`[x]`) if implementation resolved them
 - Add new tasks for any gaps between the plan and the actual implementation (e.g., exercises that were simplified, pages that were deferred, clickable actions that could not be implemented as planned)
+- When implementation reveals that an external library or tool behaves differently than documented, capture the investigation context (what was tried, why it failed, the workaround applied, and an upstream reference if applicable) as sub-bullets on the task — see the [Task Tracking Reference](resources/task-tracking-reference.md) for the format and an example
 - Update the workshop's **Status** line in the workshops file and plan to reflect the current state
+
+### Update Planning Documents
+
+When implementation diverges significantly from the plan, update the planning documents to reflect what was actually built. The plan should describe the as-built design, not just the original intent — future workshops in a sequence read the preceding plan, and stale plans lead to incorrect assumptions.
+
+Update the workshop plan file (`planning/workshop-plans/lab-*.md`) when:
+- The approach or technique changed (e.g., switched from class-based to function-based)
+- Pages were added, removed, reordered, or had their topic changed
+- Exercise files differ from what the plan specified
+- Learning objectives shifted based on what was actually achievable
+
+Keep page filenames consistent with their content. If a page's topic changes during implementation, rename the file to match (e.g., `03-old-topic.md` → `03-new-topic.md`) and update the plan's page listing to reflect the new filename.
+
+If changes affect the workshop's learning objectives or narrative arc, also update the workshop entry in the workshops file (`workshops.md` or `part-N-workshops.md`) so it remains accurate.
 
 ## Step 6: Verify Consistency
 
@@ -217,6 +232,8 @@ Periodically check for consistency across planning documents and generated works
 - All plan files with completed workshops have corresponding directories under `workshops/`
 - Workshop directory names match the names in plan files
 - Exercise files listed in the plan exist in the workshop's `exercises/` directory
+- Workshop plan page listings match the actual page files in the workshop's `content/` directory (filenames, order, and topics)
+- Page filenames reflect their content — no leftover filenames from a previous approach
 
 **Cross-reference integrity:**
 - "Detailed plan" links in workshop files point to existing files with correct paths
