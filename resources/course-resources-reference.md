@@ -1,6 +1,8 @@
 # Course Resources Reference
 
-The resources file (`planning/resources.md`) is a curated registry of external documentation, references, and learning materials discovered during course design. It ensures that useful resources found during research are recorded and available across sessions, preventing redundant web searches and allowing the course author to review and curate the list.
+The resources file (`planning/resources.md`) is a curated registry of external documentation, references, and learning materials related to the **course subject matter** discovered during course design. It ensures that useful resources found during research are recorded and available across sessions, preventing redundant web searches and allowing the course author to review and curate the list.
+
+**Scope:** This file tracks resources about the subject the course teaches — language documentation, framework guides, API references, tutorials, specifications, and similar materials. It does **not** track Educates platform documentation. Knowledge about Educates workshop structure, configuration, clickable actions, and authoring conventions is provided by the educates-course-design and educates-workshop-authoring skills and does not need to be recorded here.
 
 ## Purpose
 

@@ -73,7 +73,9 @@ Keep this file focused on AI-specific instructions and project-specific override
 
 ### Start the Course Resources File
 
-Create `planning/resources.md` to track external documentation, references, and learning materials discovered during course design. This file serves as a persistent, curated registry that survives across sessions — when conversation context is cleared and work resumes later, the agent can consult this file instead of re-searching for the same resources.
+Create `planning/resources.md` to track external documentation, references, and learning materials related to the **course subject matter** discovered during course design. This file serves as a persistent, curated registry that survives across sessions — when conversation context is cleared and work resumes later, the agent can consult this file instead of re-searching for the same resources.
+
+This file is for resources about the subject the course teaches (e.g., language documentation, framework guides, API references, tutorials), not for Educates platform documentation. Knowledge about Educates workshop structure, configuration, and authoring conventions is provided by the educates-course-design and educates-workshop-authoring skills — there is no need to duplicate that in the resources file.
 
 During requirements gathering, you will often research the course subject to understand its scope and assess feasibility. **Any time a web search or web fetch yields a useful resource — documentation pages, tutorials, API references, guides — add it to this file immediately.** Do not rely on the information staying in conversation context; record it in the file so it is available in future sessions.
 
