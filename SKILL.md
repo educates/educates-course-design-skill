@@ -216,6 +216,8 @@ Keep page filenames consistent with their content. If a page's topic changes dur
 
 If changes affect the workshop's learning objectives or narrative arc, also update the workshop entry in the workshops file (`workshops.md` or `part-N-workshops.md`) so it remains accurate.
 
+For sequential workshops, also check whether subsequent workshop plans or implementations reference anything that changed. A later workshop's "Connection to Previous Workshop" section, exercise files, or narrative hooks may assume the original approach — review and update them so the sequence remains coherent.
+
 ## Step 6: Verify Consistency
 
 Periodically check for consistency across planning documents and generated workshops. This is especially useful after creating multiple workshops or when returning to a project after a break. The checks below adapt to the course scope — skip checks that do not apply.
