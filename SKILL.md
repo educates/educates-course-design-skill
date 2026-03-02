@@ -52,7 +52,7 @@ Create `planning/course-brief.md`. The sections below adapt to the course scope 
 - **Design Principles** — The recommended approach to learner interaction (guided experience using clickable actions is the default; the course author may choose a more hands-on approach where learners type code and commands themselves) and any course-specific design decisions (e.g., how conceptual material should be handled).
 - **Scope and Growth Path** *(focused and standard)* — Record the current scope and suggest directions for future expansion. For example: "This focused course covers X with N workshops. Natural next steps could include Y and Z." This supports users who want to build incrementally, coming back later to add workshops.
 
-Refer to [Course Brief Reference](resources/course-brief-reference.md) for detailed guidance on each section.
+Refer to [Course Brief Reference](references/course-brief-reference.md) for detailed guidance on each section.
 
 ### Create the AI Assistant Instructions File
 
@@ -83,7 +83,7 @@ Start the file with whatever resources are found during Step 1. It will grow thr
 
 The course author can review and edit this file at any time to correct versions, flag outdated material, or add preferred alternatives. A curation notes section at the end of the file captures these corrections.
 
-Refer to [Course Resources Reference](resources/course-resources-reference.md) for the file structure, entry format, and maintenance conventions.
+Refer to [Course Resources Reference](references/course-resources-reference.md) for the file structure, entry format, and maintenance conventions.
 
 ## Step 2: Brainstorm and Organize Topics
 
@@ -110,7 +110,7 @@ Create `planning/course-topics.md` with:
 
 Multiple topics may be combined into a single workshop, or a large topic may be split across workshops. That mapping happens in Step 3.
 
-Refer to [Course Topics Reference](resources/course-topics-reference.md) for detailed guidance.
+Refer to [Course Topics Reference](references/course-topics-reference.md) for detailed guidance.
 
 ## Step 3: Plan Workshop Breakdown
 
@@ -146,7 +146,7 @@ As per-workshop plans are created in Step 4, add a **Detailed plan** link to eac
 
 For **focused and standard courses**, include a **Future Expansion Ideas** section at the end of the module file suggesting directions for growth — topics or workshops the user might add later. This supports incremental course development.
 
-Refer to [Workshop Breakdown Reference](resources/workshop-breakdown-reference.md) for detailed guidance.
+Refer to [Workshop Breakdown Reference](references/workshop-breakdown-reference.md) for detailed guidance.
 
 ## Step 4: Create Per-Workshop Detailed Plans
 
@@ -193,9 +193,9 @@ Common tasks identified during planning include:
 
 Add a **Status** line to the workshop's entry in the module file and to the plan's Workshop Metadata section, linking to the workshop's section in `tasks.md`.
 
-Refer to [Task Tracking Reference](resources/task-tracking-reference.md) for the file structure, task format, and priority levels.
+Refer to [Task Tracking Reference](references/task-tracking-reference.md) for the file structure, task format, and priority levels.
 
-Refer to [Workshop Plan Reference](resources/workshop-plan-reference.md) for the full structure, and [Plan Authoring Guidelines](resources/plan-authoring-guidelines.md) for conventions on sequential workshop flow, deliberate gaps, elective independence, and other guidelines.
+Refer to [Workshop Plan Reference](references/workshop-plan-reference.md) for the full structure, and [Plan Authoring Guidelines](references/plan-authoring-guidelines.md) for conventions on sequential workshop flow, deliberate gaps, elective independence, and other guidelines.
 
 ## Step 5: Implement Workshops
 
@@ -217,7 +217,7 @@ After implementing a workshop, review the result against the plan and update `pl
 
 - Mark pre-existing tasks as complete (`[x]`) if implementation resolved them
 - Add new tasks for any gaps between the plan and the actual implementation (e.g., exercises that were simplified, pages that were deferred, clickable actions that could not be implemented as planned)
-- When implementation reveals that an external library or tool behaves differently than documented, capture the investigation context (what was tried, why it failed, the workaround applied, and an upstream reference if applicable) as sub-bullets on the task — see the [Task Tracking Reference](resources/task-tracking-reference.md) for the format and an example
+- When implementation reveals that an external library or tool behaves differently than documented, capture the investigation context (what was tried, why it failed, the workaround applied, and an upstream reference if applicable) as sub-bullets on the task — see the [Task Tracking Reference](references/task-tracking-reference.md) for the format and an example
 - Update the workshop's **Status** line in the module file and plan to reflect the current state
 
 ### Update Planning Documents
@@ -404,20 +404,20 @@ For single-module courses, there is just `course-module-1.md`. The layout is the
 
 The `workshops/` directory (at the project root, alongside `planning/`) holds the actual Educates workshop implementations created in Step 5.
 
-Refer to [Planning Directory Reference](resources/planning-directory-reference.md) for file naming conventions and cross-reference linking patterns.
+Refer to [Planning Directory Reference](references/planning-directory-reference.md) for file naming conventions and cross-reference linking patterns.
 
 ## Reference Guides
 
 For detailed guidance on specific topics, see:
 
-- [Planning Directory Reference](resources/planning-directory-reference.md) — Directory structure, file naming conventions, and cross-reference linking patterns
-- [Course Brief Reference](resources/course-brief-reference.md) — What goes in a course brief and guidance for each section
-- [Course Resources Reference](resources/course-resources-reference.md) — How to track external documentation and references discovered during course design
-- [Course Topics Reference](resources/course-topics-reference.md) — How to brainstorm, organize, and annotate topics
-- [Workshop Breakdown Reference](resources/workshop-breakdown-reference.md) — How to map topics into workshops with objectives, prerequisites, and classification
-- [Workshop Plan Reference](resources/workshop-plan-reference.md) — The standard 8-section structure for per-workshop implementation plans
-- [Plan Authoring Guidelines](resources/plan-authoring-guidelines.md) — Conventions for sequential workshop flow, deliberate gaps, elective independence, and other plan-writing guidelines
-- [Task Tracking Reference](resources/task-tracking-reference.md) — Task file structure, status values, priority levels, and lifecycle conventions
+- [Planning Directory Reference](references/planning-directory-reference.md) — Directory structure, file naming conventions, and cross-reference linking patterns
+- [Course Brief Reference](references/course-brief-reference.md) — What goes in a course brief and guidance for each section
+- [Course Resources Reference](references/course-resources-reference.md) — How to track external documentation and references discovered during course design
+- [Course Topics Reference](references/course-topics-reference.md) — How to brainstorm, organize, and annotate topics
+- [Workshop Breakdown Reference](references/workshop-breakdown-reference.md) — How to map topics into workshops with objectives, prerequisites, and classification
+- [Workshop Plan Reference](references/workshop-plan-reference.md) — The standard 8-section structure for per-workshop implementation plans
+- [Plan Authoring Guidelines](references/plan-authoring-guidelines.md) — Conventions for sequential workshop flow, deliberate gaps, elective independence, and other plan-writing guidelines
+- [Task Tracking Reference](references/task-tracking-reference.md) — Task file structure, status values, priority levels, and lifecycle conventions
 
 ## Skill Version
 

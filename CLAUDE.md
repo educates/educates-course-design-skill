@@ -9,7 +9,7 @@ When working on this project, you are editing skill definition files. Follow ski
 | File / Directory | Role |
 |---|---|
 | `SKILL.md` | Main skill definition — loaded when the skill is invoked |
-| `resources/` | Structured reference guides linked from SKILL.md |
+| `references/` | Structured reference guides linked from SKILL.md |
 | `VERSION.txt` | Skill version |
 | `README.md` | User-facing install and usage documentation |
 | `.github/workflows/release.yaml` | Packages and releases the `.skill` archive |
@@ -20,7 +20,7 @@ This skill handles course **design** (planning documents). The companion skill `
 
 ## Conventions
 
-- SKILL.md links to resources via markdown references (e.g., `[Course Brief Reference](resources/course-brief-reference.md)`) — the skill framework bundles these automatically.
-- Resources are structured reference guides with specific headings and formats. Maintain their structure when editing.
+- SKILL.md links to references via markdown references (e.g., `[Course Brief Reference](references/course-brief-reference.md)`) — the skill framework bundles these automatically.
+- References are structured reference guides with specific headings and formats. Maintain their structure when editing.
 - The 6-step workflow in SKILL.md is the core user experience. Changes must preserve its sequential logic.
 - Test changes by invoking the skill locally via `/educates-course-design`.
