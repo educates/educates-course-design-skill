@@ -27,14 +27,14 @@ Basic identification and classification:
 - **Description:** One to two sentence description of what the workshop covers.
 - **Duration:** 15m / 30m / 45m / 1h (estimated completion time)
 - **Difficulty:** beginner / intermediate / advanced
-- **Type:** spine / elective / standalone
+- **Type:** core / elective / standalone
 - **Prerequisites:** Workshop N: Title (or "None" for the first workshop)
 - **Status:** Needs moderate fixup — [tasks](../tasks.md#workshop-title)
 ```
 
 The **name** matches the directory name and the `metadata.name` in the workshop's `resources/workshop.yaml`.
 
-For courses that do not use the spine/elective model, omit the **Type** field or use "standalone."
+For courses that do not use the core/elective model, omit the **Type** field or use "standalone."
 
 The **Status** line links to the workshop's section in `tasks.md` using a relative path (`../tasks.md` since plans are in the `workshop-plans/` subdirectory). Add this line once `tasks.md` exists and tasks have been recorded for the workshop. If the workshop has no outstanding tasks, omit the Status line or set it to "Complete."
 
@@ -70,7 +70,7 @@ These are copied from the workshop breakdown file (the source of truth). They ma
 
 ### 4. Connection to Previous Workshop
 
-This section is substantive for any workshop that has a predecessor in a sequential chain (spine workshops, or any workshop in a linear course that follows another). For **standalone workshops or the first workshop in a course**, this section can be omitted or replaced with a brief "Assumed Knowledge" note listing what background the learner is expected to have.
+This section is substantive for any workshop that has a predecessor in a sequential chain (core workshops, or any workshop in a linear course that follows another). For **standalone workshops or the first workshop in a course**, this section can be omitted or replaced with a brief "Assumed Knowledge" note listing what background the learner is expected to have.
 
 For **workshops with a predecessor**, explicitly state what the learner already knows and what is new:
 
@@ -92,7 +92,7 @@ For **workshops with a predecessor**, explicitly state what the learner already 
 
 This section prevents unnecessary overlap between sequential workshops. It forces the plan author to be explicit about what is assumed knowledge versus new material.
 
-For **elective workshops**, this section is briefer — state which spine prerequisites are assumed and what specific concepts from them are relevant.
+For **elective workshops**, this section is briefer — state which core prerequisites are assumed and what specific concepts from them are relevant.
 
 ### 5. Exercise Files to Create
 

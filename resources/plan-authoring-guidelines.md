@@ -4,7 +4,7 @@ These guidelines apply when writing per-workshop plan files (`planning/workshop-
 
 ## Sequential Workshop Flow
 
-*The following guidelines apply to courses with sequential workshop chains — spine workshops in courses using the spine/elective model, or workshops in a linear sequence. For standalone workshops (or the only workshop in a focused course), these guidelines do not apply.*
+*The following guidelines apply to courses with sequential workshop chains — core workshops in courses using the core/elective model, or workshops in a linear sequence. For standalone workshops (or the only workshop in a focused course), these guidelines do not apply.*
 
 ### Read Before Writing
 
@@ -43,13 +43,13 @@ If no later workshop is currently planned (e.g., in a focused course), note the 
 
 ## Elective Workshop Independence
 
-*This section applies to courses using the spine/elective navigation model.*
+*This section applies to courses using the core/elective navigation model.*
 
-Elective workshops share a common set of spine prerequisites but are **independent of each other**:
+Elective workshops share a common set of core prerequisites but are **independent of each other**:
 
 - Do not assume any other elective has been completed
 - Do not reference code, patterns, or concepts introduced in another elective
-- Only reference spine prerequisites listed in the workshop breakdown file
+- Only reference core prerequisites listed in the workshop breakdown file
 
 This ensures learners can take electives in any order without encountering unexplained concepts.
 

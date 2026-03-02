@@ -6,13 +6,13 @@ The topics document (`planning/course-topics.md`) is an inventory of topics the 
 
 The topics document serves as a brainstorming artefact and reference list. Its depth depends on the course scope:
 
-- **Comprehensive courses**: The document aims to capture everything that *could* be covered, not just what *will* be covered. Topics are organized by part.
-- **Standard courses**: The document covers the planned topics plus notes on potential expansion. Topics are organized by part (if parts exist) or as a flat list.
+- **Comprehensive courses**: The document aims to capture everything that *could* be covered, not just what *will* be covered. Topics are organized by module.
+- **Standard courses**: The document covers the planned topics plus notes on potential expansion. Topics are organized by module (if multiple modules exist) or as a flat list.
 - **Focused courses**: The document is optional. If the user already knows what their 1–3 workshops will cover, they can skip directly to the workshop breakdown. If created, it is a simple list of topics per workshop plus future expansion ideas.
 
 The topics document is:
 
-- **Organized by part** *(for courses with parts)* or **as a flat list** *(for courses without parts)* — topics are grouped logically.
+- **Organized by module** *(for courses with multiple modules)* or **as a flat list** *(for courses with a single module)* — topics are grouped logically.
 - **Annotated** — notes identify topics that need special handling (conceptual topics, elective clusters, future expansion ideas, etc.).
 - **Not a 1:1 mapping to workshops** — multiple topics may be combined into a single workshop, or a single large topic may span multiple workshops. That mapping happens in the workshop breakdown files.
 
@@ -26,12 +26,12 @@ Use a descriptive title that identifies the course:
 # Workshop Ideas: [Course Subject]
 ```
 
-### Topics by Part
+### Topics by Module
 
-For courses with parts, each part gets a level-2 heading, and each topic gets a level-3 heading with a sequential number:
+For courses with multiple modules, each module gets a level-2 heading, and each topic gets a level-3 heading with a sequential number:
 
 ```markdown
-## Part 1 — [Part Title]
+## Module 1 — [Module Title]
 
 ### 1. [Topic Title]
 - Key concept or subtopic
@@ -42,9 +42,9 @@ For courses with parts, each part gets a level-2 heading, and each topic gets a 
 - ...
 ```
 
-Number topics sequentially across the entire document (not restarting at 1 for each part). This makes it easy to reference specific topics by number from other documents.
+Number topics sequentially across the entire document (not restarting at 1 for each module). This makes it easy to reference specific topics by number from other documents.
 
-For courses without parts, omit the part-level headings and list topics as a flat numbered list:
+For courses with a single module, the module heading is optional. Topics can be listed as a flat numbered list:
 
 ```markdown
 # Workshop Ideas: [Course Subject]
@@ -74,9 +74,9 @@ Common annotations include:
 
 **Topics that are primarily conceptual**: Identify topics that may not have enough hands-on code content to sustain a standalone workshop. Note which neighbouring topics they could be folded into.
 
-**Elective clusters** *(for courses using the spine/elective model)*: Identify groups of topics that follow a similar code pattern (e.g., "build a decorator that does X") where the scaffolding is repetitive but the internal logic differs. These work well as elective workshops that learners pick from based on interest.
+**Elective clusters** *(for courses using the core/elective model)*: Identify groups of topics that follow a similar code pattern (e.g., "build a decorator that does X") where the scaffolding is repetitive but the internal logic differs. These work well as elective workshops that learners pick from based on interest.
 
-**Prerequisite observations**: Note obvious prerequisite chains that should inform workshop ordering (and spine/elective classification, if the course uses that model).
+**Prerequisite observations**: Note obvious prerequisite chains that should inform workshop ordering (and core/elective classification, if the course uses that model).
 
 **Future expansion ideas** *(especially valuable for focused and standard courses)*: Topics the user is not planning to cover now but might want to add later. These capture growth directions without committing to them, supporting incremental course development.
 
@@ -84,11 +84,11 @@ Common annotations include:
 
 When working with the user to generate topics:
 
-1. **Start from the course brief** — use the vision, scope, and part structure (if any) as the framework.
+1. **Start from the course brief** — use the vision, scope, and module structure (if any) as the framework.
 2. **Match depth to scope** — for comprehensive courses, aim for completeness: it is better to list more topics and prune later than to miss important ones. For standard courses, cover the planned topics and note expansion ideas without trying to enumerate everything. For focused courses, a simple list of what each workshop covers is sufficient.
-3. **Think about progression** — within each part (or across workshops for courses without parts), order topics roughly from foundational to advanced. This ordering is not binding but helps identify natural prerequisite chains.
+3. **Think about progression** — within each module, order topics roughly from foundational to advanced. This ordering is not binding but helps identify natural prerequisite chains.
 4. **Consider the hands-on angle** — for each topic, think about what the learner would *do* in a workshop. If a topic is primarily "learn about X" with no clear code activity, flag it in the notes.
-5. **Identify patterns** — for courses with enough workshops, look for clusters of topics that share a similar structure. These are candidates for elective workshops in courses using the spine/elective model.
+5. **Identify patterns** — for courses with enough workshops, look for clusters of topics that share a similar structure. These are candidates for elective workshops in courses using the core/elective model.
 6. **Collaborate iteratively** — propose topics, get feedback, refine. The user knows the subject matter; the AI brings structure and completeness checking.
 
 ## Maintaining the Topics Document

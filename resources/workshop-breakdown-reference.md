@@ -9,20 +9,18 @@ A workshop breakdown file answers: "How do we turn these topics into actual work
 - Which topics combine into which workshops (the mapping is not necessarily 1:1)
 - The prerequisite chain between workshops
 - What each workshop teaches and what hands-on activities it includes
-- For courses using the spine/elective model: which workshops are spine (mandatory) and which are elective (optional)
+- For courses using the core/elective model: which workshops are core (mandatory) and which are elective (optional)
 
 ## File Naming
 
-The file structure depends on the course scope:
-
-- **Courses without parts** (focused, or standard without parts): a single `planning/workshops.md`
-- **Courses with parts** (standard with parts, or comprehensive): one file per part, named `planning/part-N-workshops.md`
+Create one file per module, named `planning/course-module-N.md`:
 
 ```
-planning/workshops.md              # For courses without parts
-planning/part-1-workshops.md       # For courses with parts (one per part)
-planning/part-2-workshops.md
+planning/course-module-1.md        # Module 1 workshop breakdown
+planning/course-module-2.md        # Module 2 (when applicable)
 ```
+
+For focused and standard courses with a single module, create `planning/course-module-1.md`. Each module has its own workshop breakdown file.
 
 ## Document Structure
 
@@ -34,7 +32,7 @@ Open with a brief paragraph explaining how the topics were mapped into workshops
 
 Define what each workshop entry in this document includes. This section sets expectations for the reader. Adapt the fields to the course scope:
 
-**For courses using the spine/elective model:**
+**For courses using the core/elective model:**
 
 ```markdown
 ## Workshop Structure Conventions
@@ -42,7 +40,7 @@ Define what each workshop entry in this document includes. This section sets exp
 Each workshop described below includes:
 
 - **Covers ideas** — which topics from course-topics.md are addressed.
-- **Type** — whether this is a spine (mandatory prerequisite) or elective workshop.
+- **Type** — whether this is a core (mandatory prerequisite) or elective workshop.
 - **Status** — current workshop status and link to tasks (added once `tasks.md` exists).
 - **Prerequisites** — which workshops must be completed first.
 - **Learning objectives** — what the learner will be able to do after completing it.
@@ -54,7 +52,7 @@ Each workshop described below includes:
   the full code itself, but enough to assess feasibility and interest level).
 ```
 
-**For linear or focused courses** (no spine/elective classification):
+**For linear or focused courses** (no core/elective classification):
 
 ```markdown
 ## Workshop Structure Conventions
@@ -76,27 +74,27 @@ Each workshop described below includes:
 
 ### Organizing Workshops
 
-**For courses using the spine/elective model**, organize workshops into two sections:
+**For courses using the core/elective model**, organize workshops into two sections:
 
 ```markdown
-## Spine Workshops
+## Core Workshops
 
 These workshops form the mandatory core sequence. Each one builds directly on
 the previous and cannot be skipped.
 
 ## Elective Workshops
 
-These workshops branch off the spine and can be taken in any order once their
+These workshops branch off the core and can be taken in any order once their
 prerequisites are met.
 ```
 
-**For linear or focused courses**, list all workshops in sequence without splitting into spine and elective sections. A simple numbered list under a single heading is sufficient.
+**For linear or focused courses**, list all workshops in sequence without splitting into core and elective sections. A simple numbered list under a single heading is sufficient.
 
 ### Individual Workshop Entries
 
 Each workshop gets a level-3 heading with a sequential number:
 
-**Full template** (for courses using spine/elective classification):
+**Full template** (for courses using core/elective classification):
 
 ```markdown
 ### Workshop 1: Workshop Title
@@ -109,7 +107,7 @@ Each workshop gets a level-3 heading with a sequential number:
 
 **Covers ideas** — Topics N–M from course-topics.md (Topic Title, Topic Title)
 
-**Type** — Spine
+**Type** — Core
 
 **Prerequisites** — None (first workshop) / Workshop N: Title
 
@@ -129,7 +127,7 @@ Description of the hands-on activities...
 Description of the code that will be needed...
 ```
 
-**Simplified template** (for linear or focused courses without spine/elective):
+**Simplified template** (for linear or focused courses without core/elective):
 
 ```markdown
 ### Workshop 1: Workshop Title
@@ -164,18 +162,18 @@ The **Detailed plan** link is added once the per-workshop plan is created (Step 
 
 The **Status** line is added once `tasks.md` is created and tasks exist for the workshop. Until then, omit it. If a workshop has no outstanding tasks, the Status line can read "Complete" with no link, or be omitted.
 
-## Classifying Workshops as Spine or Elective
+## Classifying Workshops as Core or Elective
 
-*This section applies to courses using the spine/elective navigation model. For linear or focused courses, skip this section.*
+*This section applies to courses using the core/elective navigation model. For linear or focused courses, skip this section.*
 
-### Spine Workshops
+### Core Workshops
 
-A workshop is **spine** if:
+A workshop is **core** if:
 - It introduces concepts that subsequent workshops depend on
 - Skipping it would leave a gap in the learner's understanding
 - It is part of a strict progression (A → B → C)
 
-Spine workshops should be ordered so each one builds naturally on the previous. The narrative arc of each spine workshop should bridge to the next.
+Core workshops should be ordered so each one builds naturally on the previous. The narrative arc of each core workshop should bridge to the next.
 
 ### Elective Workshops
 
@@ -184,13 +182,13 @@ A workshop is **elective** if:
 - It sits alongside other workshops that cover similar patterns with different applications
 - Skipping it does not prevent the learner from understanding later material
 
-Elective workshops should list only spine workshops as prerequisites (not other electives), unless there is a genuine dependency between specific electives.
+Elective workshops should list only core workshops as prerequisites (not other electives), unless there is a genuine dependency between specific electives.
 
 ## Prerequisites
 
-Prerequisites must be **explicit** — list the specific workshop(s) by name, not "all previous workshops" or "the spine." This allows learners navigating non-linearly to know exactly what they need.
+Prerequisites must be **explicit** — list the specific workshop(s) by name, not "all previous workshops" or "the core." This allows learners navigating non-linearly to know exactly what they need.
 
-For spine workshops, the prerequisite is typically the immediately preceding spine workshop. For electives, it is typically the last spine workshop before the elective branching point. For simple linear courses, the prerequisite is simply the previous workshop (or "None" for the first).
+For core workshops, the prerequisite is typically the immediately preceding core workshop. For electives, it is typically the last core workshop before the elective branching point. For simple linear courses, the prerequisite is simply the previous workshop (or "None" for the first).
 
 ## Learning Objectives
 
@@ -216,7 +214,7 @@ When combining or splitting, update the "Covers ideas" field to reflect the mapp
 
 *Include this section for focused and standard courses. Optional for comprehensive courses.*
 
-At the end of the workshops file, include a section suggesting directions for growth:
+At the end of the module file, include a section suggesting directions for growth:
 
 ```markdown
 ## Future Expansion Ideas
@@ -225,7 +223,7 @@ If this course grows, consider:
 - Adding a workshop on [topic] to cover [gap]
 - Splitting Workshop N into two workshops if [topic] proves too large for a
   single session
-- Creating a second part focused on [advanced area]
+- Creating a second module focused on [advanced area]
 ```
 
 This supports incremental course development — users can plan a few workshops now and return later to add more, guided by these suggestions.

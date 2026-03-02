@@ -24,9 +24,9 @@ Before gathering detailed requirements, understand the scale and structure the u
 
 Gauge the scope from the conversation and propose one of these classifications:
 
-- **Focused** (1–3 workshops): A small set of workshops, possibly just an idea the user wants to flesh out. No parts, no spine/elective model. The user may not have the full picture yet — help them plan what they have now and suggest what they could add later.
-- **Standard** (4–10 workshops): A coherent course with several workshops. Parts are optional (a single grouping is fine). A simple linear sequence is the default; spine/elective is available if the user wants flexible ordering.
-- **Comprehensive** (10+ workshops across multiple parts): A large structured course. Parts and a navigation model (spine/elective recommended) help learners navigate the material.
+- **Focused** (1–3 workshops): A small set of workshops, possibly just an idea the user wants to flesh out. A single module. Core/elective model is optional. The user may not have the full picture yet — help them plan what they have now and suggest what they could add later.
+- **Standard** (4–10 workshops): A coherent course with several workshops. One or more modules. Core/elective model is optional. A simple linear sequence is the default; core/elective is available if the user wants flexible ordering.
+- **Comprehensive** (10+ workshops across multiple modules): A large structured course. Multiple modules. Core/elective model recommended to help learners navigate the material.
 
 Confirm the scope with the user before proceeding. The scope is not rigid — it can be revised later — but it shapes how much structure the workflow introduces. Record the scope in the course brief.
 
@@ -36,7 +36,7 @@ Gather the following information from the user or infer from context:
 
 - **Subject and scope**: What the course covers and how broad/deep it goes
 - **Target audience**: Who the course is for and what difficulty range it spans (beginner, intermediate, advanced, or a progression)
-- **Navigation model** *(standard and comprehensive only)*: Whether the course uses a spine/elective model (recommended for comprehensive courses where learners pick and choose) or a linear sequence. For focused courses, workshops are standalone or follow a simple linear order — no navigation model section is needed.
+- **Navigation model** *(standard and comprehensive only)*: Whether the course uses a core/elective model (recommended for comprehensive courses where learners pick and choose) or a linear sequence. For focused courses, workshops are standalone or follow a simple linear order — no navigation model section is needed.
 
 If the user provides a broad topic but not explicit details, propose reasonable defaults and confirm before proceeding. The course brief captures the "why" and "what" of the course before any topics are brainstormed.
 
@@ -44,11 +44,11 @@ If the user provides a broad topic but not explicit details, propose reasonable 
 
 Create `planning/course-brief.md`. The sections below adapt to the course scope — include only what is relevant:
 
-- **Course Vision** — What the course covers and why it exists. For courses with multiple parts, describe the progression and any organising theme or narrative arc across parts. For focused courses, a few paragraphs establishing the subject matter and learning goals is sufficient.
+- **Course Vision** — What the course covers and why it exists. For courses with multiple modules, describe the progression and any organising theme or narrative arc across modules. For focused courses, a few paragraphs establishing the subject matter and learning goals is sufficient.
 - **Target Audience** — Who the course is for, what prior knowledge is assumed, and how the course accommodates different experience levels.
 - **Delivery Platform** — That the course is delivered on the Educates training platform as interactive browser-based workshops.
-- **Course Structure** *(standard with parts and comprehensive only)* — A high-level overview of how the course is divided into parts, with a brief description of each part's theme and focus. Omit for focused courses and standard courses without parts.
-- **Navigation Model** *(standard and comprehensive only)* — How workshops relate to each other. For spine/elective courses: what spine and elective mean, how prerequisites work, and how learners navigate non-linearly. For linear courses: the expected sequence. Omit for focused courses.
+- **Course Structure** — A high-level overview of how the course is divided into modules, with a brief description of each module's theme and focus. Every course has at least one module. For focused courses with a single module, this section can be brief — a sentence or two describing the module's theme.
+- **Navigation Model** *(standard and comprehensive only)* — How workshops relate to each other. For core/elective courses: what core and elective mean, how prerequisites work, and how learners navigate non-linearly. For linear courses: the expected sequence. Omit for focused courses.
 - **Design Principles** — The recommended approach to learner interaction (guided experience using clickable actions is the default; the course author may choose a more hands-on approach where learners type code and commands themselves) and any course-specific design decisions (e.g., how conceptual material should be handled).
 - **Scope and Growth Path** *(focused and standard)* — Record the current scope and suggest directions for future expansion. For example: "This focused course covers X with N workshops. Natural next steps could include Y and Z." This supports users who want to build incrementally, coming back later to add workshops.
 
@@ -91,7 +91,7 @@ This step adapts to the course scope:
 
 - **Focused**: This step is optional. If the user already knows what their 1–3 workshops will cover, skip directly to Step 3 (or Step 4 for a single workshop). If the user wants to brainstorm what topics to include or explore expansion ideas, create a lightweight topics list without aiming for exhaustive coverage.
 - **Standard**: Work with the user to identify the topics the course will cover and note ideas for future expansion. The goal is to cover the planned scope and capture growth ideas, not to enumerate everything the subject could possibly include.
-- **Comprehensive**: Generate a thorough inventory of topics the course could cover and organize them into the parts defined in the course brief. The goal is completeness — it is better to list more topics and prune later.
+- **Comprehensive**: Generate a thorough inventory of topics the course could cover and organize them into the modules defined in the course brief. The goal is completeness — it is better to list more topics and prune later.
 
 This step is collaborative and iterative — the AI proposes topics based on the course vision and the user refines, adds, removes, and reorders them. The topic list is an inventory, not a 1:1 mapping to workshops. That mapping happens in Step 3.
 
@@ -101,10 +101,10 @@ During topic brainstorming, you will often research external documentation to un
 
 Create `planning/course-topics.md` with:
 
-- **Topics organized by part** *(for courses with parts)* or **as a flat numbered list** *(for courses without parts)* — Each topic has a heading (numbered for reference) and bullet points describing what it covers.
+- **Topics organized by module** *(for courses with multiple modules)* or **as a flat numbered list** *(for courses with a single module)* — Each topic has a heading (numbered for reference) and bullet points describing what it covers.
 - **Notes on Topic Selection** — Annotations identifying:
   - Topics that are primarily conceptual and may need folding into practical neighbours
-  - Clusters of topics with similar code structure that work well as electives *(for courses using the spine/elective model)*
+  - Clusters of topics with similar code structure that work well as electives *(for courses using the core/elective model)*
   - **Future expansion ideas** — topics the user is not planning to cover now but might want to add later *(especially valuable for focused and standard courses)*
   - Any other observations that should guide the mapping from topics to workshops
 
@@ -116,12 +116,9 @@ Refer to [Course Topics Reference](resources/course-topics-reference.md) for det
 
 Map the topics from Step 2 (or the user's workshop ideas, if Step 2 was skipped) into concrete workshops.
 
-### Create the Workshops Document
+### Create the Workshop Breakdown
 
-The file structure depends on the course scope:
-
-- **Focused and standard without parts**: Create a single `planning/workshops.md`.
-- **Standard with parts and comprehensive**: Create one file per part, named `planning/part-N-workshops.md` (e.g., `part-1-workshops.md`, `part-2-workshops.md`).
+Create one file per module, named `planning/course-module-N.md` (e.g., `course-module-1.md`, `course-module-2.md`). For focused and standard courses with a single module, create `planning/course-module-1.md`.
 
 Each file opens with:
 - A brief introduction explaining how topics were mapped to workshops (or, for focused courses, what each workshop covers)
@@ -130,14 +127,14 @@ Each file opens with:
 Then each workshop is described with:
 
 - **Covers ideas** — Which topics from `course-topics.md` are addressed (omit if Step 2 was skipped)
-- **Type** *(only for courses using the spine/elective model)* — Spine (mandatory, sequential) or elective (optional, can be taken in any order once prerequisites are met)
+- **Type** *(only for courses using the core/elective model)* — Core (mandatory, sequential) or elective (optional, can be taken in any order once prerequisites are met)
 - **Prerequisites** — Which workshops must be completed first (explicit, not implied). For focused courses with a simple sequence, "Previous workshop" or "None" is sufficient.
 - **Learning objectives** — What the learner will be able to do after completing the workshop
 - **Narrative arc** — The progression from start to finish
 - **Code exercises** — The specific hands-on activities, described in enough detail to assess whether the workshop has sufficient interactive substance
 - **Key code examples** — The types of code needed (not full implementations, but enough to assess feasibility)
 
-As per-workshop plans are created in Step 4, add a **Detailed plan** link to each workshop entry. The link uses a relative path to the `workshop-plans/` subdirectory:
+As per-workshop plans are created in Step 4, add a **Detailed plan** link to each workshop entry in the module file. The link uses a relative path to the `workshop-plans/` subdirectory:
 
 ```markdown
 ### Workshop N: Workshop Title
@@ -147,7 +144,7 @@ As per-workshop plans are created in Step 4, add a **Detailed plan** link to eac
 **Directory name:** `lab-workshop-name`
 ```
 
-For **focused and standard courses**, include a **Future Expansion Ideas** section at the end of the workshops file suggesting directions for growth — topics or workshops the user might add later. This supports incremental course development.
+For **focused and standard courses**, include a **Future Expansion Ideas** section at the end of the module file suggesting directions for growth — topics or workshops the user might add later. This supports incremental course development.
 
 Refer to [Workshop Breakdown Reference](resources/workshop-breakdown-reference.md) for detailed guidance.
 
@@ -161,9 +158,9 @@ For each workshop defined in Step 3, create a detailed implementation plan that 
 
 **Consult the course resources**: Read `planning/resources.md` for external documentation and references relevant to the workshop's subject matter. Use listed resources directly rather than re-searching the web for information that was already found during earlier design steps. If you discover additional resources while writing a plan, add them to the file immediately, annotated with the workshop name they relate to. Check the curation notes section for any version corrections or preferred alternatives the course author has noted.
 
-For **workshops with a predecessor in a sequential chain** (spine workshops, or any workshop in a linear sequence that follows another): always read the plan for the immediately preceding workshop (and the workshop breakdown descriptions for both workshops) before writing the new plan. This ensures continuity and prevents unnecessary overlap.
+For **workshops with a predecessor in a sequential chain** (core workshops, or any workshop in a linear sequence that follows another): always read the plan for the immediately preceding workshop (and the workshop breakdown descriptions for both workshops) before writing the new plan. This ensures continuity and prevents unnecessary overlap.
 
-For **elective workshops**: read the spine prerequisites listed in the workshops file but do not assume any other elective has been completed.
+For **elective workshops**: read the core prerequisites listed in the module file but do not assume any other elective has been completed.
 
 For **standalone workshops or the first workshop in a course**: no prior plan reading is needed.
 
@@ -175,14 +172,14 @@ Each plan follows a standard 8-section structure:
 
 1. **Workshop Metadata** — Name, title, description, duration, difficulty, type, prerequisites
 2. **Workshop Configuration** — Session applications needed and any special setup
-3. **Learning Objectives** — Aligned with the workshops file (the source of truth)
+3. **Learning Objectives** — Aligned with the module file (the source of truth)
 4. **Connection to Previous Workshop** — What the learner already knows and what should NOT be re-taught. Substantive for workshops with a predecessor; omit for standalone or first workshops.
 5. **Exercise Files to Create** — Every file under `exercises/`, with filename, purpose, and initial contents
 6. **Workshop Instruction Pages** — Page-by-page breakdown with content outlines and clickable action types
 7. **Terminal Working Directory Tracking** — Starting directory and any changes through the workshop
 8. **Design Notes** — Design decisions, rationale, and deliberate setups for future workshops. For focused courses, note expansion ideas — what future workshops could build on the patterns established here.
 
-After creating the plan, add the **Detailed plan** link to the workshop's entry in the workshops file (see Step 3).
+After creating the plan, add the **Detailed plan** link to the workshop's entry in the module file (see Step 3).
 
 ### Track Known Issues
 
@@ -194,7 +191,7 @@ Common tasks identified during planning include:
 - Exercise files or pages noted as potentially needing revision
 - Areas where the plan makes assumptions that should be verified
 
-Add a **Status** line to the workshop's entry in the workshops file and to the plan's Workshop Metadata section, linking to the workshop's section in `tasks.md`.
+Add a **Status** line to the workshop's entry in the module file and to the plan's Workshop Metadata section, linking to the workshop's section in `tasks.md`.
 
 Refer to [Task Tracking Reference](resources/task-tracking-reference.md) for the file structure, task format, and priority levels.
 
@@ -221,7 +218,7 @@ After implementing a workshop, review the result against the plan and update `pl
 - Mark pre-existing tasks as complete (`[x]`) if implementation resolved them
 - Add new tasks for any gaps between the plan and the actual implementation (e.g., exercises that were simplified, pages that were deferred, clickable actions that could not be implemented as planned)
 - When implementation reveals that an external library or tool behaves differently than documented, capture the investigation context (what was tried, why it failed, the workaround applied, and an upstream reference if applicable) as sub-bullets on the task — see the [Task Tracking Reference](resources/task-tracking-reference.md) for the format and an example
-- Update the workshop's **Status** line in the workshops file and plan to reflect the current state
+- Update the workshop's **Status** line in the module file and plan to reflect the current state
 
 ### Update Planning Documents
 
@@ -235,7 +232,7 @@ Update the workshop plan file (`planning/workshop-plans/lab-*.md`) when:
 
 Keep page filenames consistent with their content. If a page's topic changes during implementation, rename the file to match (e.g., `03-old-topic.md` → `03-new-topic.md`) and update the plan's page listing to reflect the new filename.
 
-If changes affect the workshop's learning objectives or narrative arc, also update the workshop entry in the workshops file (`workshops.md` or `part-N-workshops.md`) so it remains accurate.
+If changes affect the workshop's learning objectives or narrative arc, also update the workshop entry in the module file (`course-module-N.md`) so it remains accurate.
 
 For sequential workshops, also check whether subsequent workshop plans or implementations reference anything that changed. A later workshop's "Connection to Previous Workshop" section, exercise files, or narrative hooks may assume the original approach — review and update them so the sequence remains coherent.
 
@@ -246,7 +243,7 @@ Periodically check for consistency across planning documents and generated works
 ### What to Check
 
 **Planning document consistency:**
-- All workshops listed in the workshops file(s) (`workshops.md` or `part-N-workshops.md`) have corresponding plan files in `workshop-plans/`
+- All workshops listed in the module file(s) (`course-module-N.md`) have corresponding plan files in `workshop-plans/`
 - Topics referenced in workshop entries exist in `course-topics.md` *(skip if no topics document)*
 - Prerequisites referenced in plans and workshop files actually exist as defined workshops
 - For courses with sequential workshops: the narrative chain is continuous — each workshop's summary bridges to the next *(skip for standalone workshops)*
@@ -264,12 +261,12 @@ Periodically check for consistency across planning documents and generated works
 
 **Task tracking consistency** *(if `tasks.md` exists)*:
 - Workshop status values in `tasks.md` are consistent with the actual state of each workshop
-- Status lines in workshop breakdown entries and plan files link to the correct anchors in `tasks.md`
+- Status lines in module file entries and plan files link to the correct anchors in `tasks.md`
 - Completed tasks (`[x]`) accurately reflect resolved issues
 - No stale tasks remain for issues that have already been fixed
 
 **Growth path** *(focused and standard courses)*:
-- Future expansion suggestions in the workshops file and course brief are still relevant and have not been superseded by workshops that were actually created
+- Future expansion suggestions in the module file(s) and course brief are still relevant and have not been superseded by workshops that were actually created
 
 ### Record Findings as Tasks
 
@@ -294,7 +291,7 @@ When applying this skill to a project that already has workshops (in the `worksh
 At the start of a session, if the project has a `workshops/` directory with existing workshop subdirectories, check whether corresponding planning documents exist:
 
 - Are there workshop plan files in `planning/workshop-plans/` for each existing workshop?
-- Is there a workshop breakdown file (`planning/workshops.md` or `planning/part-N-workshops.md`)?
+- Is there a workshop breakdown file (`planning/course-module-N.md`)?
 - Is there a `planning/tasks.md`?
 
 If workshops exist but planning documents are missing or incomplete, proactively offer to review the existing workshops and create the missing planning artifacts, including a tasks file.
@@ -321,37 +318,89 @@ When creating or updating planning documents for a course with existing workshop
 
 Be mindful that existing workshops may be works-in-progress. The goal is to capture their current state accurately so that task tracking can guide them to completion, not to judge them against a finished standard.
 
+## Migrating from Parts/Spine to Modules/Core
+
+If an existing course repository uses the older "parts" and "spine" terminology, follow this guide to update it to the current "modules" and "core" conventions.
+
+### File Renames
+
+Use `git mv` to preserve history:
+
+| Old name | New name |
+|----------|----------|
+| `planning/part-N-workshops.md` | `planning/course-module-N.md` |
+| `planning/workshops.md` (if exists) | `planning/course-module-1.md` |
+
+### Content Updates in Planning Files
+
+After renaming files, update content within:
+
+**`planning/course-brief.md`:**
+- "Part N" → "Module N" in the Course Structure section and anywhere parts are referenced by number
+- "spine" → "core" if the Navigation Model section uses that term
+
+**`planning/course-topics.md`:**
+- Section headers: "## Part N —" → "## Module N —"
+
+**`planning/course-module-N.md`** (the renamed workshop breakdown files):
+- Section header: "## Spine Workshops" → "## Core Workshops"
+- Workshop type field: "**Type:** Spine" → "**Type:** Core" (also "**Type** — Spine" → "**Type** — Core")
+- Any prose references to "spine/elective" → "core/elective"
+- Title if it mentions "Part N": update to "Module N"
+
+**`planning/tasks.md`:**
+- Section headers: "## Part N:" → "## Module N:"
+
+**Workshop plan files in `planning/workshop-plans/`:**
+- Type field in Workshop Metadata: "spine" → "core"
+- References to `part-N-workshops.md` → `course-module-N.md`
+- Prose references to "spine" workshops → "core" workshops
+
+### Content Updates in Project Root Files
+
+**`README.md`:**
+- "Course Parts" → "Course Modules" (section headings)
+- "Part N — Title" → "Module N — Title"
+- References to `planning/part-N-workshops.md` → `planning/course-module-N.md`
+- References to "spine" → "core"
+
+**`CLAUDE.md`** (or equivalent AI assistant instructions file):
+- Update any references to "spine" or "parts" to use "core" and "modules"
+- Update any references to planning file names
+
+### Content Updates in Workshop Metadata
+
+If per-workshop `metadata.yaml` files exist with a `type` field:
+- `type: spine` → `type: core`
+
+### Verification After Migration
+
+After completing the migration, verify:
+- `grep -ri "spine" planning/` returns no results (except in any deliberate notes explaining the terminology change)
+- `grep -ri "part-[0-9]" planning/` returns no results
+- `ls planning/part-*` returns no results (all renamed)
+- `ls planning/workshops.md` returns no results (renamed to `course-module-1.md`)
+- All cross-reference links in planning files resolve correctly (especially links from workshop breakdown entries to plan files, and links from plan files to `tasks.md`)
+
 ## Planning Directory Structure
 
-All planning documents live in the `planning/` directory at the project root. The layout depends on the course scope:
+All planning documents live in the `planning/` directory at the project root.
 
-**Courses without parts** (focused, or standard without parts):
 ```
 planning/
 ├── course-brief.md             # Step 1: Course vision, scope, and requirements
 ├── resources.md                # Step 1: External references and documentation
-├── course-topics.md            # Step 2: Topics list (optional for focused)
-├── workshops.md                # Step 3: Workshop breakdown
-├── tasks.md                    # Task tracking (created when issues emerge)
-└── workshop-plans/             # Step 4: Per-workshop detailed plans
-    ├── lab-first-workshop.md
-    └── ...
-```
-
-**Courses with parts** (standard with parts, or comprehensive):
-```
-planning/
-├── course-brief.md             # Step 1: Course vision, scope, and requirements
-├── resources.md                # Step 1: External references and documentation
-├── course-topics.md            # Step 2: Topics organized by part
-├── part-1-workshops.md         # Step 3: Part 1 topics mapped to workshops
-├── part-2-workshops.md         # Step 3: Part 2 (when planned)
+├── course-topics.md            # Step 2: Topics organized by module
+├── course-module-1.md          # Step 3: Module 1 workshop breakdown
+├── course-module-2.md          # Step 3: Module 2 (when applicable)
 ├── tasks.md                    # Task tracking (created when issues emerge)
 └── workshop-plans/             # Step 4: Per-workshop detailed plans
     ├── lab-first-workshop.md
     ├── lab-second-workshop.md
     └── ...
 ```
+
+For single-module courses, there is just `course-module-1.md`. The layout is the same regardless of how many modules the course has.
 
 The `workshops/` directory (at the project root, alongside `planning/`) holds the actual Educates workshop implementations created in Step 5.
 

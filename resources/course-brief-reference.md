@@ -14,10 +14,10 @@ Describe what the course covers and the overall learning goals. This should answ
 
 - What is the subject matter?
 - How does the course progress (e.g., from fundamentals to advanced)?
-- For courses with multiple parts: is there an organising theme or narrative thread that connects the parts?
+- For courses with multiple modules: is there an organising theme or narrative thread that connects the modules?
 - What makes this course distinctive or valuable?
 
-Keep this concise — a few paragraphs, not pages. For focused courses, the vision can simply describe what the workshop(s) will teach and why, without needing to describe inter-part connections. The vision guides topic selection but does not enumerate topics (that happens in `course-topics.md`).
+Keep this concise — a few paragraphs, not pages. For focused courses, the vision can simply describe what the workshop(s) will teach and why, without needing to describe inter-module connections. The vision guides topic selection but does not enumerate topics (that happens in `course-topics.md`).
 
 ### Target Audience
 
@@ -27,7 +27,7 @@ Describe who the course is for:
 - What prior knowledge is assumed at entry points?
 - How does the course support different entry points for different experience levels?
 
-If the course uses a spine/elective model, explain how different audiences navigate it (e.g., beginners start at the beginning, experienced learners skip early spine workshops). For focused courses, a simple statement of who the workshop(s) are for and what prior knowledge is assumed is sufficient.
+If the course uses a core/elective model, explain how different audiences navigate it (e.g., beginners start at the beginning, experienced learners skip early core workshops). For focused courses, a simple statement of who the workshop(s) are for and what prior knowledge is assumed is sufficient.
 
 ### Delivery Platform
 
@@ -40,13 +40,13 @@ This section is brief and largely the same across courses, but it establishes th
 
 ### Course Structure
 
-*Include this section for courses that are divided into parts. For focused courses without parts, omit this section. For standard courses with a single grouping of workshops, a brief note on the workshop sequence is sufficient.*
+*Include this section for all courses. Every course has at least one module. For focused courses with a single module, this section can be brief — a sentence or two describing the module's theme.*
 
-Provide a high-level overview of how the course is divided into parts. For each part:
+Provide a high-level overview of how the course is divided into modules. For each module:
 
 - A title or theme
-- A brief description (1-3 sentences) of what the part covers
-- How it relates to other parts (builds on, extends, applies, etc.)
+- A brief description (1-3 sentences) of what the module covers
+- How it relates to other modules (builds on, extends, applies, etc.)
 
 This is an overview, not a detailed breakdown — the detailed breakdown happens in the workshop breakdown files.
 
@@ -56,10 +56,10 @@ This is an overview, not a detailed breakdown — the detailed breakdown happens
 
 Describe how workshops relate to each other and how learners navigate the course.
 
-For courses using the **spine/elective model** (recommended for comprehensive courses where learners pick and choose):
+For courses using the **core/elective model** (recommended for comprehensive courses where learners pick and choose):
 
-- **Spine workshops** form the mandatory core learning path within each part. They build directly on each other and cannot be skipped.
-- **Elective workshops** branch off the spine at defined points. They share spine prerequisites but are independent of each other. Learners can take them in any order, skip them, or return later.
+- **Core workshops** form the mandatory learning path within each module. They build directly on each other and cannot be skipped.
+- **Elective workshops** branch off the core at defined points. They share core prerequisites but are independent of each other. Learners can take them in any order, skip them, or return later.
 - Each workshop states its prerequisites explicitly.
 
 For **linear courses** (where all workshops are taken in sequence):
@@ -84,7 +84,7 @@ Add any course-specific design principles relevant to the particular subject mat
 
 Record the course scope (focused, standard, or comprehensive) and, for non-comprehensive courses, suggest directions for future expansion. This supports users who build courses incrementally — starting with a few workshops and adding more over time.
 
-Example: "This focused course covers X with 2 workshops. If expanded, natural next steps could include Y (which could become a third workshop building on Workshop 2) and Z (which could form the basis of a second part covering advanced topics)."
+Example: "This focused course covers X with 2 workshops. If expanded, natural next steps could include Y (which could become a third workshop building on Workshop 2) and Z (which could form the basis of a second module covering advanced topics)."
 
 The growth path is not a commitment — it captures ideas that the user can act on later when they return to extend the course.
 

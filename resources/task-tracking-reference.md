@@ -8,7 +8,7 @@ Create `planning/tasks.md` when the first tasks emerge — typically during Step
 
 ## File Structure
 
-The file is organized by workshop, with a global section for course-level tasks. Each workshop section includes a status line and a link to the workshop's plan file. For courses with parts, workshop sections may be grouped under part headings.
+The file is organized by workshop, with a global section for course-level tasks. Each workshop section includes a status line and a link to the workshop's plan file. For courses with multiple modules, workshop sections may be grouped under module headings.
 
 ### Template
 
@@ -39,13 +39,13 @@ Tasks not specific to a single workshop (e.g., updating shared configuration, ad
 
 - [ ] **P1** — Fix broken terminal command on page 03 (references wrong filename). ([source](../workshops/lab-workshop-name/workshop/content/03-page.md))
 - [ ] **P2** — Add missing exercise file listed in plan but not created. ([source](../workshops/lab-workshop-name/exercises/))
-- [x] **P1** — Correct learning objectives to match workshops.md.
+- [x] **P1** — Correct learning objectives to match workshop breakdown file.
 ```
 
-For courses with parts, add part headings above the workshop sections:
+For courses with multiple modules, add module headings above the workshop sections:
 
 ```markdown
-## Part 1: Part Title
+## Module 1: Module Title
 
 ### workshop-title
 
@@ -57,7 +57,7 @@ For courses with parts, add part headings above the workshop sections:
 **Status:** Incomplete
 ...
 
-## Part 2: Part Title
+## Module 2: Module Title
 
 ### yet-another-workshop
 ...
@@ -157,8 +157,8 @@ The relative path uses `../tasks.md` since plan files are in the `workshop-plans
 ## Adapting to Course Scope
 
 - **Focused courses** (1–3 workshops): The tasks file is lightweight. A single flat list may suffice instead of per-workshop sections if there are only one or two workshops.
-- **Standard courses**: Per-workshop sections organized as shown in the template. Part headings are optional.
-- **Comprehensive courses**: Per-workshop sections organized under part headings. The Course-Level Tasks section is particularly useful for tracking cross-cutting concerns.
+- **Standard courses**: Per-workshop sections organized as shown in the template. Module headings are optional.
+- **Comprehensive courses**: Per-workshop sections organized under module headings. The Course-Level Tasks section is particularly useful for tracking cross-cutting concerns.
 
 ## Recommending Next Work
 
