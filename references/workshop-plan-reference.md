@@ -36,6 +36,8 @@ The **name** uses the format `lab-{code}-{descriptive-name}` (e.g., `lab-a01-fir
 
 The **Duration** must be a single fixed value (e.g., `30m`), never a range (e.g., `20-25m`). This value maps directly into the Workshop definition and TrainingPortal definition, which require an exact duration.
 
+The **Difficulty** must be a single value — exactly one of `beginner`, `intermediate`, or `advanced`. Never use a range or combination (e.g., not `beginner-intermediate`). This value maps directly into the Workshop definition, which uses an enum and will only accept one of these three exact values. When the workshop's content could reasonably span two difficulty levels, use the higher (more difficult) level.
+
 For courses that do not use the core/elective model, omit the **Type** field or use "standalone."
 
 The **Status** line links to the workshop's section in `tasks.md` using a relative path (`../tasks.md` since plans are in the `workshop-plans/` subdirectory). Add this line once `tasks.md` exists and tasks have been recorded for the workshop. If the workshop has no outstanding tasks, omit the Status line or set it to "Complete."
