@@ -84,7 +84,7 @@ Add any course-specific design principles relevant to the particular subject mat
 
 Record the course scope (focused, standard, or comprehensive) and, for non-comprehensive courses, suggest directions for future expansion. This supports users who build courses incrementally — starting with a few workshops and adding more over time.
 
-Example: "This focused course covers X with 2 workshops. If expanded, natural next steps could include Y (which could become a third workshop building on Workshop 2) and Z (which could form the basis of a second module covering advanced topics)."
+Example: "This focused course covers X with 2 workshops. If expanded, natural next steps could include Y (which could become a third workshop building on Workshop A02) and Z (which could form the basis of a second module covering advanced topics)."
 
 The growth path is not a commitment — it captures ideas that the user can act on later when they return to extend the course.
 

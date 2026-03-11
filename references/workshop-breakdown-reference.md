@@ -13,14 +13,14 @@ A workshop breakdown file answers: "How do we turn these topics into actual work
 
 ## File Naming
 
-Create one file per module, named `planning/course-module-N.md`:
+Create one file per module, named `planning/course-module-X.md` where X is a lowercase letter (a, b, c, etc.):
 
 ```
-planning/course-module-1.md        # Module 1 workshop breakdown
-planning/course-module-2.md        # Module 2 (when applicable)
+planning/course-module-a.md        # Module A workshop breakdown
+planning/course-module-b.md        # Module B (when applicable)
 ```
 
-For focused and standard courses with a single module, create `planning/course-module-1.md`. Each module has its own workshop breakdown file.
+For focused and standard courses with a single module, create `planning/course-module-a.md`. Each module has its own workshop breakdown file.
 
 ## Document Structure
 
@@ -92,24 +92,24 @@ prerequisites are met.
 
 ### Individual Workshop Entries
 
-Each workshop gets a level-3 heading with a sequential number:
+Each workshop gets a level-3 heading with its workshop code. The code consists of the module letter and a two-digit zero-padded sequence number (e.g., A01, A02, B01):
 
 **Full template** (for courses using core/elective classification):
 
 ```markdown
-### Workshop 1: Workshop Title
+### Workshop A01: Workshop Title
 
-**Detailed plan:** [workshop-plans/lab-workshop-name.md](workshop-plans/lab-workshop-name.md)
+**Detailed plan:** [workshop-plans/lab-a01-workshop-name.md](workshop-plans/lab-a01-workshop-name.md)
 
-**Status:** Needs moderate fixup — [tasks](tasks.md#workshop-1-workshop-title)
+**Status:** Needs moderate fixup — [tasks](tasks.md#workshop-a01-workshop-title)
 
-**Directory name:** `lab-workshop-name`
+**Directory name:** `lab-a01-workshop-name`
 
-**Covers ideas** — Topics N–M from course-topics.md (Topic Title, Topic Title)
+**Covers ideas** — Topics 1–2 from Module A in course-topics.md (Topic Title, Topic Title)
 
 **Type** — Core
 
-**Prerequisites** — None (first workshop) / Workshop N: Title
+**Prerequisites** — None (first workshop) / Workshop A01: Title
 
 **Learning objectives:**
 After completing this workshop, the learner will be able to:
@@ -130,17 +130,17 @@ Description of the code that will be needed...
 **Simplified template** (for linear or focused courses without core/elective):
 
 ```markdown
-### Workshop 1: Workshop Title
+### Workshop A01: Workshop Title
 
-**Detailed plan:** [workshop-plans/lab-workshop-name.md](workshop-plans/lab-workshop-name.md)
+**Detailed plan:** [workshop-plans/lab-a01-workshop-name.md](workshop-plans/lab-a01-workshop-name.md)
 
-**Status:** Needs moderate fixup — [tasks](tasks.md#workshop-1-workshop-title)
+**Status:** Needs moderate fixup — [tasks](tasks.md#workshop-a01-workshop-title)
 
-**Directory name:** `lab-workshop-name`
+**Directory name:** `lab-a01-workshop-name`
 
 **Covers ideas** — Description of what this workshop covers
 
-**Prerequisites** — None / Workshop N: Title
+**Prerequisites** — None / Workshop A01: Title
 
 **Learning objectives:**
 After completing this workshop, the learner will be able to:
@@ -221,7 +221,7 @@ At the end of the module file, include a section suggesting directions for growt
 
 If this course grows, consider:
 - Adding a workshop on [topic] to cover [gap]
-- Splitting Workshop N into two workshops if [topic] proves too large for a
+- Splitting Workshop A01 into two workshops if [topic] proves too large for a
   single session
 - Creating a second module focused on [advanced area]
 ```

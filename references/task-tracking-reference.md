@@ -31,35 +31,35 @@ Tasks not specific to a single workshop (e.g., updating shared configuration, ad
 
 ---
 
-## workshop-title
+## workshop-a01-workshop-title
 
 **Status:** Needs moderate fixup
 
-**Plan:** [workshop-plans/lab-workshop-name.md](workshop-plans/lab-workshop-name.md)
+**Plan:** [workshop-plans/lab-a01-workshop-name.md](workshop-plans/lab-a01-workshop-name.md)
 
-- [ ] **P1** — Fix broken terminal command on page 03 (references wrong filename). ([source](../workshops/lab-workshop-name/workshop/content/03-page.md))
-- [ ] **P2** — Add missing exercise file listed in plan but not created. ([source](../workshops/lab-workshop-name/exercises/))
+- [ ] **P1** — Fix broken terminal command on page 03 (references wrong filename). ([source](../workshops/lab-a01-workshop-name/workshop/content/03-page.md))
+- [ ] **P2** — Add missing exercise file listed in plan but not created. ([source](../workshops/lab-a01-workshop-name/exercises/))
 - [x] **P1** — Correct learning objectives to match workshop breakdown file.
 ```
 
 For courses with multiple modules, add module headings above the workshop sections:
 
 ```markdown
-## Module 1: Module Title
+## Module A: Module Title
 
-### workshop-title
+### workshop-a01-workshop-title
 
 **Status:** Mostly complete
 ...
 
-### another-workshop
+### workshop-a02-another-workshop
 
 **Status:** Incomplete
 ...
 
-## Module 2: Module Title
+## Module B: Module Title
 
-### yet-another-workshop
+### workshop-b01-yet-another-workshop
 ...
 ```
 
@@ -104,7 +104,7 @@ Include a source link when the task relates to a specific file. The link uses a 
 - When a task stems from an external discovery (e.g., an upstream library behaving differently than documented), add indented sub-bullets capturing the investigation context:
 
   ```
-  - [ ] **P2** — Revisit decorator exercise to use `functools.wraps` once upstream fix lands. ([source](../workshops/lab-decorators/workshop/content/04-wraps.md))
+  - [ ] **P2** — Revisit decorator exercise to use `functools.wraps` once upstream fix lands. ([source](../workshops/lab-a03-decorators/workshop/content/04-wraps.md))
     - **Tried:** Calling `functools.wraps` with a class-based decorator per the docs
     - **Failed because:** `update_wrapper` raises `AttributeError` on `__wrapped__` when the decorator is a class (library v2.3.1)
     - **Workaround applied:** Used a function-based decorator instead; updated page 04 narrative to match
@@ -120,16 +120,16 @@ Include a source link when the task relates to a specific file. The link uses a 
 Each workshop entry in the breakdown file(s) includes a **Status** line that links to the corresponding section in `tasks.md`:
 
 ```markdown
-### Workshop 1: Workshop Title
+### Workshop A01: Workshop Title
 
-**Detailed plan:** [workshop-plans/lab-workshop-name.md](workshop-plans/lab-workshop-name.md)
+**Detailed plan:** [workshop-plans/lab-a01-workshop-name.md](workshop-plans/lab-a01-workshop-name.md)
 
-**Status:** Needs moderate fixup — [tasks](tasks.md#workshop-title)
+**Status:** Needs moderate fixup — [tasks](tasks.md#workshop-a01-workshop-title)
 
-**Directory name:** `lab-workshop-name`
+**Directory name:** `lab-a01-workshop-name`
 ```
 
-The anchor link uses the markdown heading anchor format (lowercase, hyphens for spaces). Add the Status line once `tasks.md` is created. If a workshop has no tasks, the Status line can read "Complete" with no link, or be omitted.
+The anchor link uses the markdown heading anchor format (lowercase, hyphens for spaces). The workshop code (e.g., a01) is included in the anchor. Add the Status line once `tasks.md` is created. If a workshop has no tasks, the Status line can read "Complete" with no link, or be omitted.
 
 ### From workshop plans
 
@@ -138,9 +138,9 @@ Each workshop plan includes a **Status** line in the Workshop Metadata section:
 ```markdown
 ## Workshop Metadata
 
-- **Name:** lab-workshop-name
+- **Name:** lab-a01-workshop-name
 - **Title:** Human-Readable Workshop Title
-- **Status:** Needs moderate fixup — [tasks](../tasks.md#workshop-title)
+- **Status:** Needs moderate fixup — [tasks](../tasks.md#workshop-a01-workshop-title)
 ...
 ```
 

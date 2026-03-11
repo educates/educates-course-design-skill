@@ -28,10 +28,10 @@ Use a descriptive title that identifies the course:
 
 ### Topics by Module
 
-For courses with multiple modules, each module gets a level-2 heading, and each topic gets a level-3 heading with a sequential number:
+For courses with multiple modules, each module gets a level-2 heading with a letter identifier, and each topic gets a level-3 heading with a number that restarts at 1 for each module:
 
 ```markdown
-## Module 1 — [Module Title]
+## Module A — [Module Title]
 
 ### 1. [Topic Title]
 - Key concept or subtopic
@@ -40,9 +40,17 @@ For courses with multiple modules, each module gets a level-2 heading, and each 
 
 ### 2. [Topic Title]
 - ...
+
+## Module B — [Module Title]
+
+### 1. [Topic Title]
+- ...
+
+### 2. [Topic Title]
+- ...
 ```
 
-Number topics sequentially across the entire document (not restarting at 1 for each module). This makes it easy to reference specific topics by number from other documents.
+Topic numbers restart at 1 for each module. Reference topics using both the module letter and topic number (e.g., "Topic A2" for the second topic in Module A). This prevents renumbering cascades when topics are added to an earlier module.
 
 For courses with a single module, the module heading is optional. Topics can be listed as a flat numbered list:
 
@@ -97,6 +105,6 @@ The topics document is a living reference during the planning phase. As workshop
 
 - Topics may be refined or clarified based on what is learned during detailed planning.
 - New topics may be added if gaps are discovered.
-- Topics may be annotated as "covered by Workshop N" for traceability, though this is not required.
+- Topics may be annotated as "covered by Workshop A01" for traceability, though this is not required.
 
-The document should not be significantly restructured once workshop planning has begun, as other documents reference topics by number.
+The document should not be significantly restructured once workshop planning has begun, as other documents reference topics by module letter and number.

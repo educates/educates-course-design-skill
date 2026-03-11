@@ -8,8 +8,8 @@ A per-workshop plan (`planning/workshop-plans/lab-*.md`) is a detailed implement
 
 Plan files are named to match the workshop directory name with a `.md` extension:
 
-- Workshop directory: `workshops/lab-first-decorator/`
-- Plan file: `planning/workshop-plans/lab-first-decorator.md`
+- Workshop directory: `workshops/lab-a01-first-decorator/`
+- Plan file: `planning/workshop-plans/lab-a01-first-decorator.md`
 
 ## Standard Structure
 
@@ -22,17 +22,17 @@ Basic identification and classification:
 ```markdown
 ## Workshop Metadata
 
-- **Name:** lab-workshop-name
+- **Name:** lab-a01-workshop-name
 - **Title:** Human-Readable Workshop Title
 - **Description:** One to two sentence description of what the workshop covers.
 - **Duration:** 15m / 30m / 45m / 1h (estimated completion time, must be a single value not a range)
 - **Difficulty:** beginner / intermediate / advanced
 - **Type:** core / elective / standalone
-- **Prerequisites:** Workshop N: Title (or "None" for the first workshop)
-- **Status:** Needs moderate fixup — [tasks](../tasks.md#workshop-title)
+- **Prerequisites:** Workshop A01: Title (or "None" for the first workshop)
+- **Status:** Needs moderate fixup — [tasks](../tasks.md#workshop-a01-workshop-title)
 ```
 
-The **name** matches the directory name and the `metadata.name` in the workshop's `resources/workshop.yaml`.
+The **name** uses the format `lab-{code}-{descriptive-name}` (e.g., `lab-a01-first-decorator`), where the code is the module letter and a two-digit zero-padded workshop number. It matches the directory name and the `metadata.name` in the workshop's `resources/workshop.yaml`.
 
 The **Duration** must be a single fixed value (e.g., `30m`), never a range (e.g., `20-25m`). This value maps directly into the Workshop definition and TrainingPortal definition, which require an exact duration.
 
@@ -79,7 +79,7 @@ For **workshops with a predecessor**, explicitly state what the learner already 
 ```markdown
 ## Connection to Previous Workshop
 
-**What the learner already knows** (from Workshop N: Title):
+**What the learner already knows** (from Workshop A01: Title):
 - Concept A — can be referenced briefly but not re-taught
 - Concept B — the learner has used this in exercises
 
@@ -210,9 +210,9 @@ Design decisions, rationale, and forward-looking notes:
   the conceptual foundation; Topic M provides the hands-on application.
 - [Design decision]: We chose to [approach] because [reason].
 - [Deliberate limitation]: The learner will notice that [limitation]. This is
-  intentionally left unresolved — Workshop K addresses it.
+  intentionally left unresolved — Workshop A03 addresses it.
 - [Future setup]: The [pattern/concept] introduced here is used again in
-  Workshop L, so it needs to be memorable.
+  Workshop A04, so it needs to be memorable.
 ```
 
 Record:

@@ -118,7 +118,7 @@ Map the topics from Step 2 (or the user's workshop ideas, if Step 2 was skipped)
 
 ### Create the Workshop Breakdown
 
-Create one file per module, named `planning/course-module-N.md` (e.g., `course-module-1.md`, `course-module-2.md`). For focused and standard courses with a single module, create `planning/course-module-1.md`.
+Create one file per module, named `planning/course-module-X.md` where X is a lowercase letter (e.g., `course-module-a.md`, `course-module-b.md`). Modules are identified by letters (A, B, C, etc.) rather than numbers. For focused and standard courses with a single module, create `planning/course-module-a.md`.
 
 Each file opens with:
 - A brief introduction explaining how topics were mapped to workshops (or, for focused courses, what each workshop covers)
@@ -137,12 +137,14 @@ Then each workshop is described with:
 As per-workshop plans are created in Step 4, add a **Detailed plan** link to each workshop entry in the module file. The link uses a relative path to the `workshop-plans/` subdirectory:
 
 ```markdown
-### Workshop N: Workshop Title
+### Workshop A01: Workshop Title
 
-**Detailed plan:** [workshop-plans/lab-workshop-name.md](workshop-plans/lab-workshop-name.md)
+**Detailed plan:** [workshop-plans/lab-a01-workshop-name.md](workshop-plans/lab-a01-workshop-name.md)
 
-**Directory name:** `lab-workshop-name`
+**Directory name:** `lab-a01-workshop-name`
 ```
+
+Workshop names use the format `lab-{code}-{descriptive-name}`, where the code is the module letter and a two-digit zero-padded workshop number (e.g., `a01`, `a02`, `b01`). This embeds the workshop's position in the course into its name, ensuring files sort by module and sequence in directory listings and making cross-references unambiguous.
 
 For **focused and standard courses**, include a **Future Expansion Ideas** section at the end of the module file suggesting directions for growth — topics or workshops the user might add later. This supports incremental course development.
 
@@ -166,7 +168,7 @@ For **standalone workshops or the first workshop in a course**: no prior plan re
 
 ### Create a Workshop Plan
 
-Create the plan file in `planning/workshop-plans/`, named to match the workshop directory (e.g., `planning/workshop-plans/lab-first-decorator.md` for the workshop that will live in `workshops/lab-first-decorator/`).
+Create the plan file in `planning/workshop-plans/`, named to match the workshop directory (e.g., `planning/workshop-plans/lab-a01-first-decorator.md` for the workshop that will live in `workshops/lab-a01-first-decorator/`).
 
 Each plan follows a standard 8-section structure:
 
@@ -232,7 +234,7 @@ Update the workshop plan file (`planning/workshop-plans/lab-*.md`) when:
 
 Keep page filenames consistent with their content. If a page's topic changes during implementation, rename the file to match (e.g., `03-old-topic.md` → `03-new-topic.md`) and update the plan's page listing to reflect the new filename.
 
-If changes affect the workshop's learning objectives or narrative arc, also update the workshop entry in the module file (`course-module-N.md`) so it remains accurate.
+If changes affect the workshop's learning objectives or narrative arc, also update the workshop entry in the module file (`course-module-X.md`) so it remains accurate.
 
 For sequential workshops, also check whether subsequent workshop plans or implementations reference anything that changed. A later workshop's "Connection to Previous Workshop" section, exercise files, or narrative hooks may assume the original approach — review and update them so the sequence remains coherent.
 
@@ -243,7 +245,7 @@ Periodically check for consistency across planning documents and generated works
 ### What to Check
 
 **Planning document consistency:**
-- All workshops listed in the module file(s) (`course-module-N.md`) have corresponding plan files in `workshop-plans/`
+- All workshops listed in the module file(s) (`course-module-X.md`) have corresponding plan files in `workshop-plans/`
 - Topics referenced in workshop entries exist in `course-topics.md` *(skip if no topics document)*
 - Prerequisites referenced in plans and workshop files actually exist as defined workshops
 - For courses with sequential workshops: the narrative chain is continuous — each workshop's summary bridges to the next *(skip for standalone workshops)*
@@ -291,7 +293,7 @@ When applying this skill to a project that already has workshops (in the `worksh
 At the start of a session, if the project has a `workshops/` directory with existing workshop subdirectories, check whether corresponding planning documents exist:
 
 - Are there workshop plan files in `planning/workshop-plans/` for each existing workshop?
-- Is there a workshop breakdown file (`planning/course-module-N.md`)?
+- Is there a workshop breakdown file (`planning/course-module-X.md`)?
 - Is there a `planning/tasks.md`?
 
 If workshops exist but planning documents are missing or incomplete, proactively offer to review the existing workshops and create the missing planning artifacts, including a tasks file.
@@ -318,6 +320,63 @@ When creating or updating planning documents for a course with existing workshop
 
 Be mindful that existing workshops may be works-in-progress. The goal is to capture their current state accurately so that task tracking can guide them to completion, not to judge them against a finished standard.
 
+## Handling Existing Naming Conventions
+
+When working with an existing course, detect which naming convention is in use before making changes.
+
+### Detecting the Convention
+
+Check for existing `planning/course-module-*.md` files:
+
+- **Letter-based convention (current):** Files like `course-module-a.md`, workshop names like `lab-a01-workshop-name`. This is the current convention — use it for all new work.
+- **Numeric convention (legacy):** Files like `course-module-1.md`, workshop names like `lab-workshop-name` (no workshop code). This was the prior convention.
+
+New courses always use the letter-based convention. There is no option to start a new course with the numeric convention.
+
+### Working with Legacy Courses
+
+If an existing course uses the numeric convention, **continue using it consistently**. Do not mix conventions within a course — adding letter-based workshop names alongside numeric ones creates confusion.
+
+When extending a legacy course:
+- Continue numbering modules as `course-module-N.md`
+- Continue using `lab-workshop-name` without workshop codes
+- Follow all other current guidelines (structure, cross-references, etc.)
+
+### Migrating from Numeric to Letter-Based Convention
+
+Only migrate when the user explicitly requests it. Before proceeding, warn that:
+
+- **Deployment impact:** Renaming workshops changes their names in TrainingPortal definitions, URLs, and any external references. Existing deployments that reference workshop names will break.
+- **Repository history:** While `git mv` preserves history, the rename affects all downstream references.
+
+Get explicit confirmation before proceeding.
+
+The migration covers:
+
+**File renames** (use `git mv` to preserve history):
+- `planning/course-module-N.md` → `planning/course-module-X.md` (where N maps to the corresponding letter: 1→a, 2→b, etc.)
+- Workshop plan files: `planning/workshop-plans/lab-name.md` → `planning/workshop-plans/lab-X01-name.md`
+- Workshop directories: `workshops/lab-name/` → `workshops/lab-X01-name/`
+
+**Planning file content updates:**
+- Module headings: "Module 1" → "Module A", "Module 2" → "Module B", etc.
+- Workshop headings: "### Workshop 1:" → "### Workshop A01:", assigned based on current ordering within each module
+- Workshop name fields: `lab-name` → `lab-a01-name`
+- All cross-reference links and anchors (detailed plan links, status links, task anchors)
+- Prerequisites: "Workshop 1: Title" → "Workshop A01: Title"
+- Topic numbering in `course-topics.md`: change from sequential across modules to restarting at 1 per module; update module headings to use letters
+
+**Workshop file content updates:**
+- Workshop metadata (`resources/workshop.yaml`): update `metadata.name`
+- Workshop resource definitions: update workshop names
+- Workshop instruction content: update textual cross-references (e.g., "as shown in Workshop 1" → "as shown in Workshop A01")
+
+**Project root file updates:**
+- `README.md`: update module references and workshop names
+- `CLAUDE.md` (or equivalent): update any references to planning file names or workshop names
+
+After migration, verify that no references to the old numeric convention remain in planning files or workshop content.
+
 ## Migrating from Parts/Spine to Modules/Core
 
 If an existing course repository uses the older "parts" and "spine" terminology, follow this guide to update it to the current "modules" and "core" conventions.
@@ -328,50 +387,59 @@ Use `git mv` to preserve history:
 
 | Old name | New name |
 |----------|----------|
-| `planning/part-N-workshops.md` | `planning/course-module-N.md` |
-| `planning/workshops.md` (if exists) | `planning/course-module-1.md` |
+| `planning/part-N-workshops.md` | `planning/course-module-X.md` (where X is the corresponding letter: 1→a, 2→b, etc.) |
+| `planning/workshops.md` (if exists) | `planning/course-module-a.md` |
 
 ### Content Updates in Planning Files
 
 After renaming files, update content within:
 
 **`planning/course-brief.md`:**
-- "Part N" → "Module N" in the Course Structure section and anywhere parts are referenced by number
+- "Part N" → "Module X" (where X is the corresponding letter) in the Course Structure section and anywhere parts are referenced
 - "spine" → "core" if the Navigation Model section uses that term
 
 **`planning/course-topics.md`:**
-- Section headers: "## Part N —" → "## Module N —"
+- Section headers: "## Part N —" → "## Module X —" (where X is the corresponding letter)
+- Topic numbering: restart at 1 for each module instead of numbering sequentially across all modules
 
-**`planning/course-module-N.md`** (the renamed workshop breakdown files):
+**`planning/course-module-X.md`** (the renamed workshop breakdown files):
 - Section header: "## Spine Workshops" → "## Core Workshops"
+- Workshop headings: "### Workshop N:" → "### Workshop X01:" (using the module letter and zero-padded number)
 - Workshop type field: "**Type:** Spine" → "**Type:** Core" (also "**Type** — Spine" → "**Type** — Core")
 - Any prose references to "spine/elective" → "core/elective"
-- Title if it mentions "Part N": update to "Module N"
+- Title if it mentions "Part N": update to "Module X"
 
 **`planning/tasks.md`:**
-- Section headers: "## Part N:" → "## Module N:"
+- Section headers: "## Part N:" → "## Module X:"
+- Workshop section headings: update to include workshop codes
 
 **Workshop plan files in `planning/workshop-plans/`:**
 - Type field in Workshop Metadata: "spine" → "core"
-- References to `part-N-workshops.md` → `course-module-N.md`
+- Name field: add workshop code after `lab-` prefix (e.g., `lab-name` → `lab-a01-name`)
+- References to `part-N-workshops.md` → `course-module-X.md`
 - Prose references to "spine" workshops → "core" workshops
+- Rename plan files to include workshop codes (e.g., `lab-name.md` → `lab-a01-name.md`)
 
 ### Content Updates in Project Root Files
 
 **`README.md`:**
 - "Course Parts" → "Course Modules" (section headings)
-- "Part N — Title" → "Module N — Title"
-- References to `planning/part-N-workshops.md` → `planning/course-module-N.md`
+- "Part N — Title" → "Module X — Title"
+- References to `planning/part-N-workshops.md` → `planning/course-module-X.md`
 - References to "spine" → "core"
 
 **`CLAUDE.md`** (or equivalent AI assistant instructions file):
 - Update any references to "spine" or "parts" to use "core" and "modules"
 - Update any references to planning file names
 
-### Content Updates in Workshop Metadata
+### Content Updates in Workshop Files
 
-If per-workshop `metadata.yaml` files exist with a `type` field:
-- `type: spine` → `type: core`
+Rename workshop directories to include workshop codes: `workshops/lab-name/` → `workshops/lab-a01-name/`
+
+Update workshop metadata and resource files:
+- `metadata.name` in `resources/workshop.yaml`: add workshop code
+- `type: spine` → `type: core` if applicable
+- Any textual cross-references in workshop instruction content (e.g., "as shown in Workshop 1" → "as shown in Workshop A01")
 
 ### Verification After Migration
 
@@ -379,7 +447,8 @@ After completing the migration, verify:
 - `grep -ri "spine" planning/` returns no results (except in any deliberate notes explaining the terminology change)
 - `grep -ri "part-[0-9]" planning/` returns no results
 - `ls planning/part-*` returns no results (all renamed)
-- `ls planning/workshops.md` returns no results (renamed to `course-module-1.md`)
+- `ls planning/workshops.md` returns no results (renamed to `course-module-a.md`)
+- All workshop names include the workshop code (e.g., `lab-a01-name`, not `lab-name`)
 - All cross-reference links in planning files resolve correctly (especially links from workshop breakdown entries to plan files, and links from plan files to `tasks.md`)
 
 ## Planning Directory Structure
@@ -391,16 +460,16 @@ planning/
 ├── course-brief.md             # Step 1: Course vision, scope, and requirements
 ├── resources.md                # Step 1: External references and documentation
 ├── course-topics.md            # Step 2: Topics organized by module
-├── course-module-1.md          # Step 3: Module 1 workshop breakdown
-├── course-module-2.md          # Step 3: Module 2 (when applicable)
+├── course-module-a.md          # Step 3: Module A workshop breakdown
+├── course-module-b.md          # Step 3: Module B (when applicable)
 ├── tasks.md                    # Task tracking (created when issues emerge)
 └── workshop-plans/             # Step 4: Per-workshop detailed plans
-    ├── lab-first-workshop.md
-    ├── lab-second-workshop.md
+    ├── lab-a01-first-workshop.md
+    ├── lab-a02-second-workshop.md
     └── ...
 ```
 
-For single-module courses, there is just `course-module-1.md`. The layout is the same regardless of how many modules the course has.
+For single-module courses, there is just `course-module-a.md`. The layout is the same regardless of how many modules the course has.
 
 The `workshops/` directory (at the project root, alongside `planning/`) holds the actual Educates workshop implementations created in Step 5.
 

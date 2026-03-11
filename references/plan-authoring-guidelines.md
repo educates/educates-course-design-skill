@@ -14,8 +14,8 @@ Always read the plan for the **immediately preceding workshop in the sequence** 
 
 Sequential workshops must flow into each other as a continuous narrative:
 
-- The **summary page** of workshop N should bridge to workshop N+1 by noting limitations, unanswered questions, or capabilities that the next workshop will introduce.
-- The **overview page** of workshop N+1 should pick up exactly where N left off, referencing what was learned but not re-teaching it.
+- The **summary page** of a workshop should bridge to the next workshop in sequence by noting limitations, unanswered questions, or capabilities that the next workshop will introduce.
+- The **overview page** of the next workshop should pick up exactly where the previous one left off, referencing what was learned but not re-teaching it.
 
 This creates a sense of progression — each workshop ends with a reason to continue, and the next workshop begins by fulfilling that promise.
 

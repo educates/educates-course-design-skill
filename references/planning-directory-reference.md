@@ -13,20 +13,20 @@ project-root/
 │   ├── course-brief.md                 # Course vision, scope, and requirements
 │   ├── resources.md                    # External references and documentation
 │   ├── course-topics.md                # Topics organized by module
-│   ├── course-module-1.md             # Module 1 workshop breakdown
-│   ├── course-module-2.md             # Module 2 workshop breakdown (when applicable)
+│   ├── course-module-a.md             # Module A workshop breakdown
+│   ├── course-module-b.md             # Module B workshop breakdown (when applicable)
 │   ├── tasks.md                        # Task tracking (created when issues emerge)
 │   └── workshop-plans/                 # Per-workshop detailed plans
-│       ├── lab-first-workshop.md
-│       ├── lab-second-workshop.md
+│       ├── lab-a01-first-workshop.md
+│       ├── lab-a02-second-workshop.md
 │       └── ...
 └── workshops/                      # Actual Educates workshop implementations
-    ├── lab-first-workshop/
-    ├── lab-second-workshop/
+    ├── lab-a01-first-workshop/
+    ├── lab-a02-second-workshop/
     └── ...
 ```
 
-For single-module courses, there is just `course-module-1.md`. The layout is the same regardless of how many modules the course has.
+For single-module courses, there is just `course-module-a.md`. The layout is the same regardless of how many modules the course has.
 
 The `planning/` and `workshops/` directories serve distinct purposes:
 
@@ -46,19 +46,19 @@ All planning document filenames use **lowercase letters and dashes only**. No up
 | `course-brief.md` | Course vision, scope, audience, design principles, and growth path |
 | `resources.md` | External documentation, references, and learning materials (created in Step 1, updated throughout) |
 | `course-topics.md` | Topics list with selection notes (optional for focused courses) |
-| `course-module-N.md` | Workshop breakdown for module N (one file per module) |
+| `course-module-X.md` | Workshop breakdown for module X (one file per module, where X is a lowercase letter: a, b, c, etc.) |
 | `tasks.md` | Centralized task tracking organized by workshop (created when issues emerge) |
 
-Each module has its own workshop breakdown file: `course-module-1.md`, `course-module-2.md`, etc. The number matches the module number used throughout the course.
+Each module has its own workshop breakdown file: `course-module-a.md`, `course-module-b.md`, etc. The letter matches the module identifier used throughout the course (A, B, C, etc.).
 
 ### Per-Workshop Plan Files
 
 Per-workshop plans live in the `workshop-plans/` subdirectory. Each file is named to match the workshop directory name with a `.md` extension:
 
-- Workshop directory: `workshops/lab-first-decorator/`
-- Plan file: `planning/workshop-plans/lab-first-decorator.md`
+- Workshop directory: `workshops/lab-a01-first-decorator/`
+- Plan file: `planning/workshop-plans/lab-a01-first-decorator.md`
 
-The `lab-` prefix on workshop names follows the Educates naming convention (see the educates-workshop-authoring skill for details).
+Workshop names use the format `lab-{code}-{descriptive-name}`, where the code is the module letter and a two-digit zero-padded workshop number (e.g., `a01`, `a02`, `b01`). The `lab-` prefix follows the Educates naming convention (see the educates-workshop-authoring skill for details). The workshop code ensures files sort by module and sequence in directory listings.
 
 ## Cross-Reference Conventions
 
@@ -66,11 +66,11 @@ Planning documents reference each other frequently. Use these patterns consisten
 
 ### Workshop breakdown file referencing topics
 
-In the workshop breakdown file (`course-module-N.md`), reference topics by number and name as they appear in `course-topics.md`:
+In the workshop breakdown file (`course-module-X.md`), reference topics by number and name as they appear in `course-topics.md`:
 
 ```markdown
-**Covers ideas** — Topics 1–2 from course-topics.md (Functions as First-Class
-Objects, Closures and Nested Functions)
+**Covers ideas** — Topics 1–2 from Module A in course-topics.md (Functions as
+First-Class Objects, Closures and Nested Functions)
 ```
 
 For focused courses where no topics document exists, describe what the workshop covers directly instead.
@@ -80,14 +80,14 @@ For focused courses where no topics document exists, describe what the workshop 
 Each workshop entry includes a "Detailed plan" link using a relative path to the `workshop-plans/` subdirectory:
 
 ```markdown
-### Workshop N: Workshop Title
+### Workshop A01: Workshop Title
 
-**Detailed plan:** [workshop-plans/lab-workshop-name.md](workshop-plans/lab-workshop-name.md)
+**Detailed plan:** [workshop-plans/lab-a01-workshop-name.md](workshop-plans/lab-a01-workshop-name.md)
 
-**Directory name:** `lab-workshop-name`
+**Directory name:** `lab-a01-workshop-name`
 ```
 
-The link text and URL both use the `workshop-plans/` prefix since the link is relative to the `planning/` directory where the workshop breakdown file lives.
+The workshop code (e.g., A01) consists of the module letter and a two-digit zero-padded sequence number. The link text and URL both use the `workshop-plans/` prefix since the link is relative to the `planning/` directory where the workshop breakdown file lives.
 
 ### Workshop plans referencing parent files
 
@@ -106,13 +106,13 @@ The learning objectives are aligned with the workshop breakdown file.
 Once `tasks.md` exists, each workshop entry in the breakdown file includes a **Status** line linking to the workshop's task section:
 
 ```markdown
-### Workshop N: Workshop Title
+### Workshop A01: Workshop Title
 
-**Detailed plan:** [workshop-plans/lab-workshop-name.md](workshop-plans/lab-workshop-name.md)
+**Detailed plan:** [workshop-plans/lab-a01-workshop-name.md](workshop-plans/lab-a01-workshop-name.md)
 
-**Status:** Needs moderate fixup — [tasks](tasks.md#workshop-title)
+**Status:** Needs moderate fixup — [tasks](tasks.md#workshop-a01-workshop-title)
 
-**Directory name:** `lab-workshop-name`
+**Directory name:** `lab-a01-workshop-name`
 ```
 
 If a workshop has no outstanding tasks, the Status line can read "Complete" with no link, or be omitted.
@@ -122,7 +122,7 @@ If a workshop has no outstanding tasks, the Status line can read "Complete" with
 Once `tasks.md` exists, each workshop plan includes a **Status** line in the Workshop Metadata section:
 
 ```markdown
-- **Status:** Needs moderate fixup — [tasks](../tasks.md#workshop-title)
+- **Status:** Needs moderate fixup — [tasks](../tasks.md#workshop-a01-workshop-title)
 ```
 
 The relative path uses `../tasks.md` since plan files are in the `workshop-plans/` subdirectory.
@@ -133,7 +133,7 @@ The planning documents form a hierarchy where each level feeds the next:
 
 1. **Course brief** (`course-brief.md`) — Establishes the "why" and "what" of the course. Created first, referenced by everything else.
 2. **Topics** (`course-topics.md`) — Content inventory, organized by module or as a flat list. Derived from the course brief. *Optional for focused courses — can be skipped if the user proceeds directly to the workshop breakdown.*
-3. **Workshop breakdown** (`course-module-N.md`) — Topics mapped into concrete workshops with objectives and structure. Derived from the topics list (or directly from the course brief for focused courses).
+3. **Workshop breakdown** (`course-module-X.md`) — Topics mapped into concrete workshops with objectives and structure. Derived from the topics list (or directly from the course brief for focused courses).
 4. **Workshop plans** (`workshop-plans/lab-*.md`) — Detailed implementation blueprints for each workshop. Derived from the workshop breakdown file.
 
 Each level adds specificity. The course brief is high-level and stable; workshop plans are detailed and may evolve as implementation reveals refinements. For focused courses, the hierarchy may be shortened: brief → workshop breakdown → plans.
