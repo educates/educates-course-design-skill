@@ -25,7 +25,7 @@ Basic identification and classification:
 - **Name:** lab-workshop-name
 - **Title:** Human-Readable Workshop Title
 - **Description:** One to two sentence description of what the workshop covers.
-- **Duration:** 15m / 30m / 45m / 1h (estimated completion time)
+- **Duration:** 15m / 30m / 45m / 1h (estimated completion time, must be a single value not a range)
 - **Difficulty:** beginner / intermediate / advanced
 - **Type:** core / elective / standalone
 - **Prerequisites:** Workshop N: Title (or "None" for the first workshop)
@@ -33,6 +33,8 @@ Basic identification and classification:
 ```
 
 The **name** matches the directory name and the `metadata.name` in the workshop's `resources/workshop.yaml`.
+
+The **Duration** must be a single fixed value (e.g., `30m`), never a range (e.g., `20-25m`). This value maps directly into the Workshop definition and TrainingPortal definition, which require an exact duration.
 
 For courses that do not use the core/elective model, omit the **Type** field or use "standalone."
 
